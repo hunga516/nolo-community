@@ -20,23 +20,25 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <ClerkProvider
-      appearance={{
-        layout: {
-          unsafe_disableDevelopmentModeWarnings: true,
-        },
-      }}
-      localization={viVN}
-    >
-      <html lang="en">
-        <body className={inter.className}>
+    <html lang="en">
+      <head>
+      </head>
+      <body className={inter.className}>
+        <ClerkProvider
+          appearance={{
+            layout: {
+              unsafe_disableDevelopmentModeWarnings: true,
+            },
+          }}
+          localization={viVN}
+        >
           <TRPCProvider>
             <Toaster />
             {children}
           </TRPCProvider>
           <div id="modal-root"></div>
-        </body>
-      </html>
-    </ClerkProvider>
+        </ClerkProvider>
+      </body>
+    </html>
   );
 }
