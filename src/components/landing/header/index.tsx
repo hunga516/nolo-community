@@ -4,9 +4,11 @@ import { Menu, X } from 'lucide-react'
 import { cn } from '@/lib/utils'
 import { useEffect, useState } from 'react'
 import Image from 'next/image'
+import LogoWithName from '@/components/common/logo'
 
 const menuItems = [
     { name: 'Trang chủ', href: '/' },
+    { name: 'Nghề nghiệp', href: '/nghe-nghiep' },
     { name: 'Hướng dẫn', href: '/huong-dan' },
     { name: 'Đội ngũ', href: '/doi-ngu' },
     { name: 'Tin tức', href: '/tin-tuc' },
@@ -35,17 +37,7 @@ export const Header = () => {
                                 href="/"
                                 aria-label="home"
                                 className="flex items-center space-x-2">
-                                <Image
-                                    src="/logo.svg"
-                                    alt="logo nolo"
-                                    width={30}
-                                    height={30}
-                                ></Image>
-                                <span
-                                    className={`font-semibold  opacity-100 pointer-events-none"}`}
-                                >
-                                    NOLO Community
-                                </span>
+                                <LogoWithName />
                             </Link>
                             <button
                                 onClick={() => setMenuState(!menuState)}
@@ -85,15 +77,15 @@ export const Header = () => {
                                 </ul>
                             </div>
                             <div className="flex items-center gap-4">
-                                    <Link href="https://discord.gg/Vak5pRjFP3" target="blank">
-                                        <Image alt='discord logo' width={34} height={34} src="https://pngimg.com/d/discord_PNG11.png" />
-                                    </Link>
-                                    <Link href="https://www.facebook.com/groups/3965835106963608" target="blank">
-                                        <Image alt='facebook logo' width={31} height={31} src="https://upload.wikimedia.org/wikipedia/commons/6/6c/Facebook_Logo_2023.png" />
-                                    </Link>
-                                    <Link href="https://servers.fivem.net/servers/detail/lgqbzv" target="blank" className="-ml-3">
-                                        <Image alt='fivem logo' width={47} height={47} src="https://1000marcas.net/wp-content/uploads/2025/01/FiveM-Logo-thumb-1280x720.png" />
-                                    </Link>
+                                <Link href="https://discord.gg/Vak5pRjFP3" target="blank">
+                                    <Image alt='discord logo' width={34} height={34} src="https://pngimg.com/d/discord_PNG11.png" />
+                                </Link>
+                                <Link href="https://www.facebook.com/groups/3965835106963608" target="blank">
+                                    <Image alt='facebook logo' width={31} height={31} src="https://upload.wikimedia.org/wikipedia/commons/6/6c/Facebook_Logo_2023.png" />
+                                </Link>
+                                <Link href="https://servers.fivem.net/servers/detail/lgqbzv" target="blank" className="-ml-3">
+                                    <Image alt='fivem logo' width={47} height={47} src="https://1000marcas.net/wp-content/uploads/2025/01/FiveM-Logo-thumb-1280x720.png" />
+                                </Link>
                             </div>
                         </div>
                     </div>

@@ -1,10 +1,9 @@
 import Link from 'next/link'
-import { ChevronRight } from 'lucide-react'
+import { Cpu, Lock, Sparkles, Zap, ChevronRight } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import Image from 'next/image'
 import { TextEffect } from '@/components/ui/text-effect'
 import { AnimatedGroup } from '@/components/ui/animated-group'
-import { Header } from '@/components/landing/header/header'
 import JoinCommunityButton from '@/components/landing/header/join-community-button'
 
 const transitionVariants = {
@@ -30,7 +29,6 @@ const transitionVariants = {
 export default function Page() {
     return (
         <>
-            <Header />
             <main className="overflow-hidden">
                 <div
                     aria-hidden
@@ -176,91 +174,54 @@ export default function Page() {
                         </AnimatedGroup>
                     </div>
                 </section>
-                <section className="bg-background pb-16 pt-16 md:pb-32">
-                    <div className="group relative m-auto max-w-5xl px-6">
-                        <div className="absolute inset-0 z-10 flex scale-95 items-center justify-center opacity-0 duration-500 group-hover:scale-100 group-hover:opacity-100">
-                            <Link
-                                href="/"
-                                className="block text-sm duration-150 hover:opacity-75">
-                                <span> Meet Our Customers</span>
-
-                                <ChevronRight className="ml-1 inline-block size-3" />
-                            </Link>
+                <section className="py-16 md:py-32">
+                    <div className="mx-auto max-w-6xl space-y-12 px-6">
+                        <div className="relative z-10 grid items-center gap-4 md:grid-cols-2 md:gap-12">
+                            <div>
+                                <h2 className="text-4xl font-semibold">Cảnh sát thành phố</h2>
+                                <p className='text-green-600 text-lg'>Đang tuyển dụng</p>
+                            </div>
+                            <p className="max-w-sm sm:ml-auto">Đội ngũ cảnh sát chuyên nghiệp, vui vẻ, hoà đồng công tư phân minh luôn có mặt khi bạn thực hiện các hoạt động tội phạm.</p>
                         </div>
-                        <div className="group-hover:blur-xs mx-auto mt-12 grid max-w-2xl grid-cols-4 gap-x-12 gap-y-8 transition-all duration-500 group-hover:opacity-50 sm:gap-x-16 sm:gap-y-14">
-                            <div className="flex">
-                                <img
-                                    className="mx-auto h-5 w-fit dark:invert"
-                                    src="https://html.tailus.io/blocks/customers/nvidia.svg"
-                                    alt="Nvidia Logo"
-                                    height="20"
-                                    width="auto"
-                                />
+                        <div className="relative rounded-3xl overflow-hidden md:-mx-8 lg:col-span-3">
+                            <div className="aspect-88/36 relative">
+                                <div className="bg-linear-to-t z-1 from-background absolute inset-0 to-transparent"></div>
+                                <div className='overflow-hidden'>
+                                    <Image src="/img/police-banner.webp" className="absolute inset-0 z-10 rounded-md" alt="payments illustration dark" width={2797} height={1137} />
+                                </div>
+                                <Image src="/img/police-banner.webp" className="hidden dark:block" alt="payments illustration dark" width={2797} height={1137} />
+                                <Image src="/img/police-banner.webp" className="dark:hidden" alt="payments illustration light" width={2797} height={1137} />
                             </div>
+                        </div>
+                        <div className="relative mx-auto grid grid-cols-2 gap-x-3 gap-y-6 sm:gap-8 lg:grid-cols-4">
+                            <div className="space-y-3">
+                                <div className="flex items-center gap-2">
+                                    <Zap className="size-4" />
+                                    <h3 className="text-sm font-medium">Tốc độ</h3>
+                                </div>
+                                <p className="text-muted-foreground text-sm">Cảnh sát sẽ luôn có mặt trong khoảng thời gian ngắn nhất.</p>
+                            </div>
+                            <div className="space-y-2">
+                                <div className="flex items-center gap-2">
+                                    <Cpu className="size-4" />
+                                    <h3 className="text-sm font-medium">Hoả lực</h3>
+                                </div>
+                                <p className="text-muted-foreground text-sm">Được trang bị các vũ khi và phương tiện tiên tiến nhất thành phố.</p>
+                            </div>
+                            <div className="space-y-2">
+                                <div className="flex items-center gap-2">
+                                    <Lock className="size-4" />
+                                    <h3 className="text-sm font-medium">An toàn</h3>
+                                </div>
+                                <p className="text-muted-foreground text-sm">Mỗi cảnh sát đều được trang bị bodycam. Bạn luôn có thể yêu cầu trích suất để bảo vệ quyền công dân.</p>
+                            </div>
+                            <div className="space-y-2">
+                                <div className="flex items-center gap-2">
+                                    <Sparkles className="size-4" />
 
-                            <div className="flex">
-                                <img
-                                    className="mx-auto h-4 w-fit dark:invert"
-                                    src="https://html.tailus.io/blocks/customers/column.svg"
-                                    alt="Column Logo"
-                                    height="16"
-                                    width="auto"
-                                />
-                            </div>
-                            <div className="flex">
-                                <img
-                                    className="mx-auto h-4 w-fit dark:invert"
-                                    src="https://html.tailus.io/blocks/customers/github.svg"
-                                    alt="GitHub Logo"
-                                    height="16"
-                                    width="auto"
-                                />
-                            </div>
-                            <div className="flex">
-                                <img
-                                    className="mx-auto h-5 w-fit dark:invert"
-                                    src="https://html.tailus.io/blocks/customers/nike.svg"
-                                    alt="Nike Logo"
-                                    height="20"
-                                    width="auto"
-                                />
-                            </div>
-                            <div className="flex">
-                                <img
-                                    className="mx-auto h-5 w-fit dark:invert"
-                                    src="https://html.tailus.io/blocks/customers/lemonsqueezy.svg"
-                                    alt="Lemon Squeezy Logo"
-                                    height="20"
-                                    width="auto"
-                                />
-                            </div>
-                            <div className="flex">
-                                <img
-                                    className="mx-auto h-4 w-fit dark:invert"
-                                    src="https://html.tailus.io/blocks/customers/laravel.svg"
-                                    alt="Laravel Logo"
-                                    height="16"
-                                    width="auto"
-                                />
-                            </div>
-                            <div className="flex">
-                                <img
-                                    className="mx-auto h-7 w-fit dark:invert"
-                                    src="https://html.tailus.io/blocks/customers/lilly.svg"
-                                    alt="Lilly Logo"
-                                    height="28"
-                                    width="auto"
-                                />
-                            </div>
-
-                            <div className="flex">
-                                <img
-                                    className="mx-auto h-6 w-fit dark:invert"
-                                    src="https://html.tailus.io/blocks/customers/openai.svg"
-                                    alt="OpenAI Logo"
-                                    height="24"
-                                    width="auto"
-                                />
+                                    <h3 className="text-sm font-medium">Tham gia dễ dàng</h3>
+                                </div>
+                                <p className="text-muted-foreground text-sm">Chúng tôi luôn chiêu mộ và tôn trọng những công dân tham gia vào đội ngũ cảnh sát.</p>
                             </div>
                         </div>
                     </div>
