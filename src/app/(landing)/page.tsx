@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { Cpu, Lock, Sparkles, Zap, ChevronRight } from 'lucide-react'
+import { Cpu, Lock, Sparkles, Zap, HeartPulse, Siren, ShieldCheck, Handshake, Wrench, Truck, Clock, ThumbsUp, Activity, Mail, LockIcon, Briefcase } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import Image from 'next/image'
 import { TextEffect } from '@/components/ui/text-effect'
@@ -134,6 +134,22 @@ export default function Page() {
                                         </Link>
                                     </Button>
                                 </AnimatedGroup>
+
+                                    <AnimatedGroup
+                                    variants={{
+                                        container: {
+                                            visible: {
+                                                transition: {
+                                                    staggerChildren: 0.05,
+                                                    delayChildren: 0.75,
+                                                },
+                                            },
+                                        },
+                                        ...transitionVariants,
+                                    }}
+                                    className="mt-6 flex flex-col items-center justify-center gap-2 md:flex-row">
+                                <span className='text-xs text-red-500 italic'>*Nolo Community là máy chủ FiveM dành cho người chơi sở hữu GTA V bản quyền. Chúng tôi không phân phối, chỉnh sửa hay phát hành lại game gốc dưới bất kỳ hình thức nào.</span>
+                                </AnimatedGroup>
                             </div>
                         </div>
 
@@ -149,12 +165,12 @@ export default function Page() {
                                 },
                                 ...transitionVariants,
                             }}>
-                            <div className="relative -mr-56 mt-8 overflow-hidden px-2 sm:mr-0 sm:mt-12 md:mt-20">
+                            <div className="relative mt-8 overflow-hidden px-2 sm:mr-0 sm:mt-6 md:mt-12">
                                 <div
                                     aria-hidden
                                     className="bg-linear-to-b to-background absolute inset-0 z-10 from-transparent from-35%"
                                 />
-                                <div className="inset-shadow-2xs ring-background dark:inset-shadow-white/20 bg-background relative mx-auto max-w-6xl overflow-hidden rounded-2xl border p-4 shadow-lg shadow-zinc-950/15 ring-1">
+                                <div className="inset-shadow-2xs ring-background dark:inset-shadow-white/20 bg-background relative mx-auto max-w-6xl overflow-hidden rounded-2xl border p-2 md:p-4 shadow-lg shadow-zinc-950/15 ring-1">
                                     <Image
                                         className="bg-background aspect-15/8 relative hidden rounded-2xl dark:block"
                                         src="/img/city-2.jpg"
@@ -175,53 +191,229 @@ export default function Page() {
                     </div>
                 </section>
                 <section className="py-16 md:py-32">
-                    <div className="mx-auto max-w-6xl space-y-12 px-6">
-                        <div className="relative z-10 grid items-center gap-4 md:grid-cols-2 md:gap-12">
+            <div className="mx-auto max-w-6xl px-6">
+                <div className="grid items-center gap-12 md:grid-cols-2 md:gap-12 lg:grid-cols-5 lg:gap-24">
+                    <div className="lg:col-span-2">
+                        <div className="md:pr-6 lg:pr-0">
+                            <h2 className="text-4xl font-semibold lg:text-5xl">Trãi nghiệm của bạn là ưu tiên</h2>
+                            <p className="mt-6">Chúng tôi mang đến dịch vụ miễn phí với tinh thần cống hiến, đảm bảo hỗ trợ nhanh chóng và hiệu quả cho cộng đồng.</p>
+                        </div>
+                        <ul className="mt-8 divide-y border-y *:flex *:items-center *:gap-3 *:py-3">
+                            <li>
+                                <Briefcase className="size-5" />
+                                Nghề nghiệp đa dạng
+                            </li>
+                            <li>
+                                <Mail className="size-5" />
+                                Hỗ trợ mọi lúc 24/7
+                            </li>
+                            <li>
+                                <Zap className="size-5" />
+                                Hỗ trợ trãi nghiệm nhanh chóng
+                            </li>
+                            <li>
+                                <Activity className="size-5" />
+                                Giao diện và script tối ưu
+                            </li>
+                            <li>
+                                <LockIcon className="size-5" />
+                                Bảo mật hoàn toàn trên nền tảng FiveM
+                            </li>
+                        </ul>
+                    </div>
+                    <div className="border-border/50 relative rounded-3xl border p-3 lg:col-span-3">
+                           <Image src="/img/bugati.webp" className="object-contain rounded-[15px] dark:block" alt="payments illustration dark" width={1207} height={929} />
+                    </div>
+                </div>
+            </div>
+        </section>
+                <section className="py-8 md:py-20">
+                    <div className="mx-auto max-w-6xl space-y-12">
+                        <div className="relative z-10 grid items-center gap-4 md:grid-cols-2 md:gap-12 px-6">
                             <div>
-                                <h2 className="text-4xl font-semibold">Cảnh sát thành phố</h2>
+                                <h2 className="text-2xl md:text-4xl font-semibold">Cảnh sát thành phố</h2>
                                 <p className='text-green-600 text-lg'>Đang tuyển dụng</p>
                             </div>
                             <p className="max-w-sm sm:ml-auto">Đội ngũ cảnh sát chuyên nghiệp, vui vẻ, hoà đồng công tư phân minh luôn có mặt khi bạn thực hiện các hoạt động tội phạm.</p>
                         </div>
-                        <div className="relative rounded-3xl overflow-hidden md:-mx-8 lg:col-span-3">
-                            <div className="aspect-88/36 relative">
-                                <div className="bg-linear-to-t z-1 from-background absolute inset-0 to-transparent"></div>
-                                <div className='overflow-hidden'>
-                                    <Image src="/img/police-banner.webp" className="absolute inset-0 z-10 rounded-md" alt="payments illustration dark" width={2797} height={1137} />
-                                </div>
-                                <Image src="/img/police-banner.webp" className="hidden dark:block" alt="payments illustration dark" width={2797} height={1137} />
-                                <Image src="/img/police-banner.webp" className="dark:hidden" alt="payments illustration light" width={2797} height={1137} />
+                        <div className="relative mt-8 overflow-hidden px-2 sm:mr-0 sm:mt-6 md:mt-12">
+                            <div
+                                aria-hidden
+                                className="bg-linear-to-b to-background absolute inset-0 z-10 from-transparent from-70%"
+                            />
+                            <div className="inset-shadow-2xs ring-background dark:inset-shadow-white/20 bg-background relative mx-auto max-w-6xl overflow-hidden rounded-2xl border p-2 md:p-4 shadow-lg shadow-zinc-950/15 ring-1">
+                                <Image
+                                    className="bg-background aspect-15/8 relative hidden rounded-2xl dark:block"
+                                    src="/img/police-banner.webp"
+                                    alt="police banner"
+                                    width="2700"
+                                    height="1440"
+                                />
+                                <Image
+                                    className="z-2 border-border/25 aspect-15/8 relative rounded-2xl border dark:hidden"
+                                    src="/img/police-banner.webp"
+                                    alt="police banner"
+                                    width="2700"
+                                    height="1440"
+                                />
                             </div>
                         </div>
-                        <div className="relative mx-auto grid grid-cols-2 gap-x-3 gap-y-6 sm:gap-8 lg:grid-cols-4">
+                        <div className="relative mx-auto grid grid-cols-2 gap-x-3 gap-y-6 sm:gap-8 lg:grid-cols-4 px-6">
                             <div className="space-y-3">
                                 <div className="flex items-center gap-2">
                                     <Zap className="size-4" />
-                                    <h3 className="text-sm font-medium">Tốc độ</h3>
+                                    <h3 className="text-sm font-medium">Phản ứng nhanh</h3>
                                 </div>
-                                <p className="text-muted-foreground text-sm">Cảnh sát sẽ luôn có mặt trong khoảng thời gian ngắn nhất.</p>
+                                <p className="text-muted-foreground text-sm">Luôn có mặt kịp thời tại hiện trường, sẵn sàng hỗ trợ người dân.</p>
                             </div>
                             <div className="space-y-2">
                                 <div className="flex items-center gap-2">
                                     <Cpu className="size-4" />
-                                    <h3 className="text-sm font-medium">Hoả lực</h3>
+                                    <h3 className="text-sm font-medium">Trang bị hiện đại</h3>
                                 </div>
-                                <p className="text-muted-foreground text-sm">Được trang bị các vũ khi và phương tiện tiên tiến nhất thành phố.</p>
+                                <p className="text-muted-foreground text-sm">Sử dụng công nghệ và vũ khí tối tân để bảo vệ trật tự.</p>
                             </div>
                             <div className="space-y-2">
                                 <div className="flex items-center gap-2">
                                     <Lock className="size-4" />
-                                    <h3 className="text-sm font-medium">An toàn</h3>
+                                    <h3 className="text-sm font-medium">Minh bạch & công bằng</h3>
                                 </div>
-                                <p className="text-muted-foreground text-sm">Mỗi cảnh sát đều được trang bị bodycam. Bạn luôn có thể yêu cầu trích suất để bảo vệ quyền công dân.</p>
+                                <p className="text-muted-foreground text-sm">Mọi hoạt động được ghi lại bằng bodycam, đảm bảo minh bạch và quyền lợi công dân.</p>
                             </div>
                             <div className="space-y-2">
                                 <div className="flex items-center gap-2">
                                     <Sparkles className="size-4" />
-
-                                    <h3 className="text-sm font-medium">Tham gia dễ dàng</h3>
+                                    <h3 className="text-sm font-medium">Tuyển dụng mở rộng</h3>
                                 </div>
-                                <p className="text-muted-foreground text-sm">Chúng tôi luôn chiêu mộ và tôn trọng những công dân tham gia vào đội ngũ cảnh sát.</p>
+                                <p className="text-muted-foreground text-sm">Cơ hội gia nhập lực lượng bảo vệ thành phố cho mọi công dân có lý tưởng.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section className="py-8 md:py-20">
+                    <div className="mx-auto max-w-6xl space-y-12">
+                        <div className="relative z-10 grid items-center gap-4 md:grid-cols-2 md:gap-12 px-6">
+                            <div>
+                                <h2 className="text-2xl md:text-4xl font-semibold">Bác sĩ cứu thương</h2>
+                                <p className='text-green-600 text-lg'>Đang tuyển dụng</p>
+                            </div>
+                            <p className="max-w-sm sm:ml-auto">Đội ngũ y tế chuyên nghiệp, tận tâm, luôn sẵn sàng hỗ trợ và có mặt kịp thời khi bạn gặp sự cố hoặc chấn thương trong thành phố.</p>
+                        </div>
+                        <div className="relative mt-8 overflow-hidden px-2 sm:mr-0 sm:mt-6 md:mt-12">
+                            <div
+                                aria-hidden
+                                className="bg-linear-to-b to-background absolute inset-0 z-10 from-transparent from-70%"
+                            />
+                            <div className="inset-shadow-2xs ring-background dark:inset-shadow-white/20 bg-background relative mx-auto max-w-6xl overflow-hidden rounded-2xl border p-2 md:p-4 shadow-lg shadow-zinc-950/15 ring-1">
+                                <Image
+                                    className="bg-background aspect-15/8 relative hidden rounded-2xl dark:block"
+                                    src="/img/ambulance-banner.jpg"
+                                    alt="ambulance banner"
+                                    width="2700"
+                                    height="1440"
+                                />
+                                <Image
+                                    className="z-2 border-border/25 aspect-15/8 relative rounded-2xl border dark:hidden"
+                                    src="/img/ambulance-banner.jpg"
+                                    alt="ambulance banner"
+                                    width="2700"
+                                    height="1440"
+                                />
+                            </div>
+                        </div>
+                        <div className="relative mx-auto grid grid-cols-2 gap-x-3 gap-y-6 sm:gap-8 lg:grid-cols-4 px-6">
+                            <div className="space-y-3">
+                                <div className="flex items-center gap-2">
+                                    <HeartPulse className="size-4" />
+                                    <h3 className="text-sm font-medium">Cứu sống kịp thời</h3>
+                                </div>
+                                <p className="text-muted-foreground text-sm">Đội ngũ y tế luôn sẵn sàng ứng cứu và hỗ trợ người bị thương.</p>
+                            </div>
+                            <div className="space-y-2">
+                                <div className="flex items-center gap-2">
+                                    <Siren className="size-4" />
+                                    <h3 className="text-sm font-medium">Phản ứng khẩn cấp</h3>
+                                </div>
+                                <p className="text-muted-foreground text-sm">Luôn có mặt nhanh chóng khi có tai nạn hay tình huống khẩn cấp.</p>
+                            </div>
+                            <div className="space-y-2">
+                                <div className="flex items-center gap-2">
+                                    <ShieldCheck className="size-4" />
+                                    <h3 className="text-sm font-medium">Đảm bảo an toàn</h3>
+                                </div>
+                                <p className="text-muted-foreground text-sm">Trang bị đầy đủ thiết bị bảo hộ, tuân thủ quy trình y tế nghiêm ngặt.</p>
+                            </div>
+                            <div className="space-y-2">
+                                <div className="flex items-center gap-2">
+                                    <Handshake className="size-4" />
+                                    <h3 className="text-sm font-medium">Luôn hỗ trợ</h3>
+                                </div>
+                                <p className="text-muted-foreground text-sm">Tận tâm chăm sóc và hỗ trợ người dân trong mọi hoàn cảnh.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section className="py-8 md:py-20">
+                    <div className="mx-auto max-w-6xl space-y-12">
+                        <div className="relative z-10 grid items-center gap-4 md:grid-cols-2 md:gap-12 px-6">
+                            <div>
+                                <h2 className="text-2xl md:text-4xl font-semibold">Sửa xe cứu hộ</h2>
+                                <p className='text-green-600 text-lg'>Đang tuyển dụng</p>
+                            </div>
+                            <p className="max-w-sm sm:ml-auto">
+                                Đội ngũ cứu hộ cơ động, kỹ thuật cao, luôn có mặt khi phương tiện của bạn gặp sự cố trong thành phố.
+                            </p>
+                        </div>
+                        <div className="relative mt-8 overflow-hidden px-2 sm:mr-0 sm:mt-6 md:mt-12">
+                            <div
+                                aria-hidden
+                                className="bg-linear-to-b to-background absolute inset-0 z-10 from-transparent from-70%"
+                            />
+                            <div className="inset-shadow-2xs ring-background dark:inset-shadow-white/20 bg-background relative mx-auto max-w-6xl overflow-hidden rounded-2xl border p-2 md:p-4 shadow-lg shadow-zinc-950/15 ring-1">
+                                <Image
+                                    className="bg-background aspect-15/8 relative hidden rounded-2xl dark:block"
+                                    src="/img/mechanic-banner.jpg"
+                                    alt="ambulance banner"
+                                    width="2700"
+                                    height="1440"
+                                />
+                                <Image
+                                    className="z-2 border-border/25 aspect-15/8 relative rounded-2xl border dark:hidden"
+                                    src="/img/mechanic-banner.jpg"
+                                    alt="ambulance banner"
+                                    width="2700"
+                                    height="1440"
+                                />
+                            </div>
+                        </div>
+                        <div className="relative mx-auto grid grid-cols-2 gap-x-3 gap-y-6 sm:gap-8 lg:grid-cols-4 px-6">
+                            <div className="space-y-3">
+                                <div className="flex items-center gap-2">
+                                    <Wrench className="size-4" />
+                                    <h3 className="text-sm font-medium">Sửa chữa chuyên nghiệp</h3>
+                                </div>
+                                <p className="text-muted-foreground text-sm">Đội ngũ kỹ thuật viên lành nghề sẵn sàng xử lý mọi sự cố kỹ thuật.</p>
+                            </div>
+                            <div className="space-y-2">
+                                <div className="flex items-center gap-2">
+                                    <Truck className="size-4" />
+                                    <h3 className="text-sm font-medium">Cứu hộ tận nơi</h3>
+                                </div>
+                                <p className="text-muted-foreground text-sm">Sẵn sàng đến bất cứ đâu trong thành phố để hỗ trợ phương tiện của bạn.</p>
+                            </div>
+                            <div className="space-y-2">
+                                <div className="flex items-center gap-2">
+                                    <Clock className="size-4" />
+                                    <h3 className="text-sm font-medium">Có mặt nhanh chóng</h3>
+                                </div>
+                                <p className="text-muted-foreground text-sm">Luôn phản ứng nhanh khi nhận được yêu cầu cứu hộ.</p>
+                            </div>
+                            <div className="space-y-2">
+                                <div className="flex items-center gap-2">
+                                    <ThumbsUp className="size-4" />
+                                    <h3 className="text-sm font-medium">Thái độ tận tình</h3>
+                                </div>
+                                <p className="text-muted-foreground text-sm">Luôn hỗ trợ khách hàng với tinh thần trách nhiệm và thân thiện.</p>
                             </div>
                         </div>
                     </div>
