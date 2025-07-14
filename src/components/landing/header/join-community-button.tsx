@@ -15,7 +15,7 @@ const JoinCommunityButton = () => {
             href="https://discord.gg/Vak5pRjFP3"
             target="_blank"
             className="hover:bg-background dark:hover:border-t-border bg-muted group mx-auto flex w-fit items-center gap-4 rounded-full border p-1 pl-4 shadow-md shadow-zinc-950/5 transition-colors duration-300 dark:border-t-white/5 dark:shadow-zinc-950">
-            <span className="hidden md:block text-foreground text-sm">Tham gia ngay cộng đồng GTA 5 RolePlay của chúng tôi</span>
+            <span className="hidden md:block text-foreground text-sm">Tham gia ngay cộng đồng GTA 5 Role Play của chúng tôi</span>
             <span className="block md:hidden text-foreground text-sm">Tham gia cộng đồng</span>
             <span className="dark:border-background block h-4 w-0.5 border-l bg-white dark:bg-zinc-700"></span>
 

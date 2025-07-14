@@ -30,6 +30,10 @@ export default function Page() {
     return (
         <>
             <main className="overflow-hidden">
+                <div className="absolute w-full h-[1200px] -z-10">
+                    <div className="absolute inset-0 bg-gradient-to-b from-transparent to-background from-80% z-10"></div>
+                    <Image className='object-cover' src="/img/background.jpg" alt='background' fill />
+                </div>
                 <div
                     aria-hidden
                     className="absolute inset-0 isolate hidden opacity-65 contain-strict lg:block">
@@ -74,77 +78,43 @@ export default function Page() {
                             />
                         </AnimatedGroup>
                         <div className="absolute inset-0 -z-10 size-full [background:radial-gradient(125%_125%_at_50%_100%,transparent_0%,var(--color-background)_75%)]"></div>
-                        <div className="mx-auto max-w-6xl px-6">
-                            <div className="sm:mx-auto lg:mr-auto lg:mt-0">
+                        <div className="mx-auto max-w-7xl px-6">
+                            <div className="text-center relative sm:mx-auto lg:mr-auto lg:mt-0">
+
+                                {/* 3 icon */}
+                                <AnimatedGroup variants={transitionVariants}>
+                                    <div className="absolute right-0 sm:-right-2 md:right- lg:right-36 xl:right-10 top-15 sm:top-20 lg:top-16 -rotate-120 w-[20px] h-[20px] sm:w-[28px] sm:h-[28px] xl:w-[32px] xl:h-[32px]">
+                                        <Image src="/img/sandwich.png" fill alt='sandwich' />
+                                    </div>
+                                    <div className="absolute left-0 sm:-left-2 md:left-6 lg:left-28 xl:left-10 top-46 sm:top-48 lg:top-56 rotate-320 w-[20px] h-[20px] sm:w-[28px] sm:h-[28px] xl:w-[32px] xl:h-[32px]">
+                                        <Image src="/img/gun.png" fill alt='gun' />
+                                    </div>
+                                    <div className="absolute right-2 sm:right-5 md:right- lg:right-26 xl:right-20 top-50 sm:top-52 lg:top-62 xl:top-80 rotate-200 scale-y-[-1] w-[20px] h-[20px] sm:w-[28px] sm:h-[28px] xl:w-[32px] xl:h-[32px]">
+                                        <Image src="/img/truck.png" fill alt='truck' />
+                                    </div>
+                                </AnimatedGroup>
+
+
                                 <AnimatedGroup variants={transitionVariants}>
                                     <JoinCommunityButton />
                                 </AnimatedGroup>
-                                <div className='grid grid-cols-2 gap-4 mt-4 md:mt-12'>
-                                    <div className='text-left'>
-                                        <TextEffect
-                                            preset="fade-in-blur"
-                                            speedSegment={0.3}
-                                            as="h1"
-                                            className="text-xl md:text-6xl xl:text-7xl font-bold">
-                                            Máy chủ GTA5 Role Play nhập vai đỉnh cao
-                                        </TextEffect>
-                                        <TextEffect
-                                            per="line"
-                                            preset="fade-in-blur"
-                                            speedSegment={0.3}
-                                            delay={0.5}
-                                            as="p"
-                                            className="hidden md:block mx-auto mt-8 max-w-2xl text-md md:text-lg">
-                                            Tái hiện thế giới thực đầy đủ ngành nghề, luật pháp và tương tác xã hội. Mỗi quyết định đều ảnh hưởng đến số phận nhân vật bạn đang nhập vai.
-                                        </TextEffect>
 
-                                        <AnimatedGroup
-                                            variants={{
-                                                container: {
-                                                    visible: {
-                                                        transition: {
-                                                            staggerChildren: 0.05,
-                                                            delayChildren: 0.75,
-                                                        },
-                                                    },
-                                                },
-                                                ...transitionVariants,
-                                            }}
-                                            className="mt-12 flex flex-col items-center gap-2 md:flex-row">
-                                            <div
-                                                key={1}
-                                                className="bg-foreground/10 rounded-[calc(var(--radius-xl)+0.125rem)] border p-0.5">
-                                                <Button
-                                                    asChild
-                                                    size="lg"
-                                                    className="rounded-xl px-5 text-base">
-                                                    <Link href="https://cfx.re/join/lgqbzv" target="_blank">
-                                                        <span className="text-nowrap">Tham gia miễn phí</span>
-                                                        <Image alt='fivem logo' width={32} height={32} src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/FiveM-Logo.png/1200px-FiveM-Logo.png" />
-                                                    </Link>
-                                                </Button>
-                                            </div>
-                                            <Button
-                                                key={2}
-                                                asChild
-                                                size="lg"
-                                                variant="ghost"
-                                                className="h-10.5 rounded-xl px-5">
-                                                <Link href="#link">
-                                                    <span className="text-nowrap">Hướng dẫn tham gia</span>
-                                                </Link>
-                                            </Button>
-                                        </AnimatedGroup>
-                                    </div>
-                                    <div className='' style={{ position: 'relative', width: '100%', height: '500px' }}>
-                                        <Image
-                                            alt="banner"
-                                            src="/img/banner.png"
-                                            fill
-                                            style={{ objectFit: 'contain' }}
-                                        />
-                                    </div>
-                                </div>
+                                <TextEffect
+                                    preset="fade-in-blur"
+                                    speedSegment={0.3}
+                                    as="h1"
+                                    className="mt-10 sm:mt-16 font-semibold text-balance text-3xl sm:text-5xl md:text-5xl lg:text-6xl lg:mt-16 xl:text-[5.25rem]">
+                                    Bắt đầu là người thường Kết thúc là huyền thoại
+                                </TextEffect>
+                                <TextEffect
+                                    per="line"
+                                    preset="fade-in-blur"
+                                    speedSegment={0.3}
+                                    delay={0.5}
+                                    as="p"
+                                    className="hidden md:block mx-auto mt-8 max-w-2xl text-balance text-md md:text-lg">
+                                    Tái hiện thế giới thực đầy đủ ngành nghề, luật pháp và tương tác xã hội. Mỗi quyết định đều ảnh hưởng đến số phận nhân vật bạn đang nhập vai.
+                                </TextEffect>
 
                                 <AnimatedGroup
                                     variants={{
@@ -158,7 +128,45 @@ export default function Page() {
                                         },
                                         ...transitionVariants,
                                     }}
-                                    className="mt-6 flex flex-col items-center justify-center gap-2 md:flex-row">
+                                    className="mt-12 flex flex-col items-center justify-center gap-2 md:flex-row">
+                                    <div
+                                        key={1}
+                                        className="bg-foreground/10 rounded-[calc(var(--radius-xl)+0.125rem)] border p-0.5">
+                                        <Button
+                                            asChild
+                                            size="lg"
+                                            className="rounded-xl px-5 text-base">
+                                            <Link href="https://cfx.re/join/lgqbzv" target="_blank">
+                                                <span className="text-nowrap">Kết nối ngay</span>
+                                                <Image alt='fivem logo' width={32} height={32} src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/FiveM-Logo.png/1200px-FiveM-Logo.png" />
+                                            </Link>
+                                        </Button>
+                                    </div>
+                                    {/* <Button
+                                        key={2}
+                                        asChild
+                                        size="lg"
+                                        variant="ghost"
+                                        className="h-10.5 rounded-xl px-5">
+                                        <Link href="#link">
+                                            <span className="text-nowrap">Hướng dẫn tham gia</span>
+                                        </Link>
+                                    </Button> */}
+                                </AnimatedGroup>
+
+                                <AnimatedGroup
+                                    variants={{
+                                        container: {
+                                            visible: {
+                                                transition: {
+                                                    staggerChildren: 0.05,
+                                                    delayChildren: 0.75,
+                                                },
+                                            },
+                                        },
+                                        ...transitionVariants,
+                                    }}
+                                    className="mt-32 flex flex-col items-center justify-center gap-2 md:flex-row">
                                     <span className='text-xs text-red-500 italic'>*Nolo Community là máy chủ FiveM dành cho người chơi sở hữu GTA V bản quyền. Chúng tôi không phân phối, chỉnh sửa hay phát hành lại game gốc dưới bất kỳ hình thức nào.</span>
                                 </AnimatedGroup>
                             </div>
@@ -177,11 +185,15 @@ export default function Page() {
                                 ...transitionVariants,
                             }}>
                             <div className="relative mt-8 overflow-hidden px-2 sm:mr-0 sm:mt-6 md:mt-12">
-                                <div
+                                {/* <div
                                     aria-hidden
                                     className="bg-linear-to-b to-background absolute inset-0 z-10 from-transparent from-35%"
-                                />
+                                /> */}
+
                                 <div className="inset-shadow-2xs ring-background dark:inset-shadow-white/20 bg-background relative mx-auto max-w-6xl overflow-hidden rounded-2xl border p-2 md:p-4 shadow-lg shadow-zinc-950/15 ring-1">
+                                    <div className="absolute bottom-0 left-0 ml-4 md:ml-8 mb-4 md:mb-8 px-2 py-1 z-10 bg-blue-500/80 text-white rounded-sm text-xs md:text-sm truncate max-sm:max-w-48">
+                                        Sự kiện chào mừng công dân mới đang diễn ra
+                                    </div>
                                     <Image
                                         className="bg-background aspect-15/8 relative hidden rounded-2xl dark:block"
                                         src="/img/city-2.jpg"
@@ -206,7 +218,7 @@ export default function Page() {
                         <div className="grid items-center gap-12 md:grid-cols-2 md:gap-12 lg:grid-cols-5 lg:gap-24">
                             <div className="lg:col-span-2">
                                 <div className="md:pr-6 lg:pr-0">
-                                    <h2 className="text-4xl font-semibold lg:text-5xl">Trải nghiệm của bạn là ưu tiên</h2>
+                                    <h2 className="text-4xl font-semibold lg:text-5xl">Trãi nghiệm của bạn là ưu tiên</h2>
                                     <p className="mt-6">Chúng tôi mang đến dịch vụ miễn phí với tinh thần cống hiến, đảm bảo hỗ trợ nhanh chóng và hiệu quả cho cộng đồng.</p>
                                 </div>
                                 <ul className="mt-8 divide-y border-y *:flex *:items-center *:gap-3 *:py-3">
