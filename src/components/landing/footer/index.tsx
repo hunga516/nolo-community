@@ -57,7 +57,7 @@ export default function Footer() {
                         <Image alt='fivem logo' width={47} height={47} src="https://1000marcas.net/wp-content/uploads/2025/01/FiveM-Logo-thumb-1280x720.png" />
                     </Link>
                 </div>
-                <span className="text-muted-foreground block text-center text-sm"> © {new Date().getFullYear()} Nolo Community, powered by Dev Ngọc Lộc</span>
+                <span className="text-muted-foreground block text-center text-sm"> © {new Date().getFullYear()} Nolo Community, powered by Nolo Team</span>
             </div>
         </footer>
     )
