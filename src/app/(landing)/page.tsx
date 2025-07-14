@@ -74,28 +74,77 @@ export default function Page() {
                             />
                         </AnimatedGroup>
                         <div className="absolute inset-0 -z-10 size-full [background:radial-gradient(125%_125%_at_50%_100%,transparent_0%,var(--color-background)_75%)]"></div>
-                        <div className="mx-auto max-w-7xl px-6">
-                            <div className="text-center sm:mx-auto lg:mr-auto lg:mt-0">
+                        <div className="mx-auto max-w-6xl px-6">
+                            <div className="sm:mx-auto lg:mr-auto lg:mt-0">
                                 <AnimatedGroup variants={transitionVariants}>
                                     <JoinCommunityButton />
                                 </AnimatedGroup>
+                                <div className='grid grid-cols-2 gap-4 mt-4 md:mt-12'>
+                                    <div className='text-left'>
+                                        <TextEffect
+                                            preset="fade-in-blur"
+                                            speedSegment={0.3}
+                                            as="h1"
+                                            className="text-xl md:text-6xl xl:text-7xl font-bold">
+                                            Máy chủ GTA5 Role Play nhập vai đỉnh cao
+                                        </TextEffect>
+                                        <TextEffect
+                                            per="line"
+                                            preset="fade-in-blur"
+                                            speedSegment={0.3}
+                                            delay={0.5}
+                                            as="p"
+                                            className="hidden md:block mx-auto mt-8 max-w-2xl text-md md:text-lg">
+                                            Tái hiện thế giới thực đầy đủ ngành nghề, luật pháp và tương tác xã hội. Mỗi quyết định đều ảnh hưởng đến số phận nhân vật bạn đang nhập vai.
+                                        </TextEffect>
 
-                                <TextEffect
-                                    preset="fade-in-blur"
-                                    speedSegment={0.3}
-                                    as="h1"
-                                    className="mt-8 text-balance text-3xl md:text-7xl lg:mt-16 xl:text-[5.25rem]">
-                                    Bắt đầu là người thường Kết thúc là huyền thoại
-                                </TextEffect>
-                                <TextEffect
-                                    per="line"
-                                    preset="fade-in-blur"
-                                    speedSegment={0.3}
-                                    delay={0.5}
-                                    as="p"
-                                    className="hidden md:block mx-auto mt-8 max-w-2xl text-balance text-md md:text-lg">
-                                    Tái hiện thế giới thực đầy đủ ngành nghề, luật pháp và tương tác xã hội. Mỗi quyết định đều ảnh hưởng đến số phận nhân vật bạn đang nhập vai.
-                                </TextEffect>
+                                        <AnimatedGroup
+                                            variants={{
+                                                container: {
+                                                    visible: {
+                                                        transition: {
+                                                            staggerChildren: 0.05,
+                                                            delayChildren: 0.75,
+                                                        },
+                                                    },
+                                                },
+                                                ...transitionVariants,
+                                            }}
+                                            className="mt-12 flex flex-col items-center gap-2 md:flex-row">
+                                            <div
+                                                key={1}
+                                                className="bg-foreground/10 rounded-[calc(var(--radius-xl)+0.125rem)] border p-0.5">
+                                                <Button
+                                                    asChild
+                                                    size="lg"
+                                                    className="rounded-xl px-5 text-base">
+                                                    <Link href="https://cfx.re/join/lgqbzv" target="_blank">
+                                                        <span className="text-nowrap">Tham gia miễn phí</span>
+                                                        <Image alt='fivem logo' width={32} height={32} src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/FiveM-Logo.png/1200px-FiveM-Logo.png" />
+                                                    </Link>
+                                                </Button>
+                                            </div>
+                                            <Button
+                                                key={2}
+                                                asChild
+                                                size="lg"
+                                                variant="ghost"
+                                                className="h-10.5 rounded-xl px-5">
+                                                <Link href="#link">
+                                                    <span className="text-nowrap">Hướng dẫn tham gia</span>
+                                                </Link>
+                                            </Button>
+                                        </AnimatedGroup>
+                                    </div>
+                                    <div className='' style={{ position: 'relative', width: '100%', height: '500px' }}>
+                                        <Image
+                                            alt="banner"
+                                            src="/img/banner.png"
+                                            fill
+                                            style={{ objectFit: 'contain' }}
+                                        />
+                                    </div>
+                                </div>
 
                                 <AnimatedGroup
                                     variants={{
@@ -109,46 +158,8 @@ export default function Page() {
                                         },
                                         ...transitionVariants,
                                     }}
-                                    className="mt-12 flex flex-col items-center justify-center gap-2 md:flex-row">
-                                    <div
-                                        key={1}
-                                        className="bg-foreground/10 rounded-[calc(var(--radius-xl)+0.125rem)] border p-0.5">
-                                        <Button
-                                            asChild
-                                            size="lg"
-                                            className="rounded-xl px-5 text-base">
-                                            <Link href="https://cfx.re/join/lgqbzv" target="_blank">
-                                                <span className="text-nowrap">Kết nối máy chủ</span>
-                                                <Image alt='fivem logo' width={32} height={32} src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/FiveM-Logo.png/1200px-FiveM-Logo.png" />
-                                            </Link>
-                                        </Button>
-                                    </div>
-                                    <Button
-                                        key={2}
-                                        asChild
-                                        size="lg"
-                                        variant="ghost"
-                                        className="h-10.5 rounded-xl px-5">
-                                        <Link href="#link">
-                                            <span className="text-nowrap">Hướng dẫn tham gia</span>
-                                        </Link>
-                                    </Button>
-                                </AnimatedGroup>
-
-                                    <AnimatedGroup
-                                    variants={{
-                                        container: {
-                                            visible: {
-                                                transition: {
-                                                    staggerChildren: 0.05,
-                                                    delayChildren: 0.75,
-                                                },
-                                            },
-                                        },
-                                        ...transitionVariants,
-                                    }}
                                     className="mt-6 flex flex-col items-center justify-center gap-2 md:flex-row">
-                                <span className='text-xs text-red-500 italic'>*Nolo Community là máy chủ FiveM dành cho người chơi sở hữu GTA V bản quyền. Chúng tôi không phân phối, chỉnh sửa hay phát hành lại game gốc dưới bất kỳ hình thức nào.</span>
+                                    <span className='text-xs text-red-500 italic'>*Nolo Community là máy chủ FiveM dành cho người chơi sở hữu GTA V bản quyền. Chúng tôi không phân phối, chỉnh sửa hay phát hành lại game gốc dưới bất kỳ hình thức nào.</span>
                                 </AnimatedGroup>
                             </div>
                         </div>
@@ -191,42 +202,42 @@ export default function Page() {
                     </div>
                 </section>
                 <section className="py-16 md:py-32">
-            <div className="mx-auto max-w-6xl px-6">
-                <div className="grid items-center gap-12 md:grid-cols-2 md:gap-12 lg:grid-cols-5 lg:gap-24">
-                    <div className="lg:col-span-2">
-                        <div className="md:pr-6 lg:pr-0">
-                            <h2 className="text-4xl font-semibold lg:text-5xl">Trãi nghiệm của bạn là ưu tiên</h2>
-                            <p className="mt-6">Chúng tôi mang đến dịch vụ miễn phí với tinh thần cống hiến, đảm bảo hỗ trợ nhanh chóng và hiệu quả cho cộng đồng.</p>
+                    <div className="mx-auto max-w-6xl px-6">
+                        <div className="grid items-center gap-12 md:grid-cols-2 md:gap-12 lg:grid-cols-5 lg:gap-24">
+                            <div className="lg:col-span-2">
+                                <div className="md:pr-6 lg:pr-0">
+                                    <h2 className="text-4xl font-semibold lg:text-5xl">Trải nghiệm của bạn là ưu tiên</h2>
+                                    <p className="mt-6">Chúng tôi mang đến dịch vụ miễn phí với tinh thần cống hiến, đảm bảo hỗ trợ nhanh chóng và hiệu quả cho cộng đồng.</p>
+                                </div>
+                                <ul className="mt-8 divide-y border-y *:flex *:items-center *:gap-3 *:py-3">
+                                    <li>
+                                        <Briefcase className="size-5" />
+                                        Nghề nghiệp đa dạng
+                                    </li>
+                                    <li>
+                                        <Mail className="size-5" />
+                                        Hỗ trợ mọi lúc 24/7
+                                    </li>
+                                    <li>
+                                        <Zap className="size-5" />
+                                        Hỗ trợ trãi nghiệm nhanh chóng
+                                    </li>
+                                    <li>
+                                        <Activity className="size-5" />
+                                        Giao diện và script tối ưu
+                                    </li>
+                                    <li>
+                                        <LockIcon className="size-5" />
+                                        Bảo mật hoàn toàn trên nền tảng FiveM
+                                    </li>
+                                </ul>
+                            </div>
+                            <div className="border-border/50 relative rounded-3xl border p-3 lg:col-span-3">
+                                <Image src="/img/bugati.webp" className="object-contain rounded-[15px] dark:block" alt="payments illustration dark" width={1207} height={929} />
+                            </div>
                         </div>
-                        <ul className="mt-8 divide-y border-y *:flex *:items-center *:gap-3 *:py-3">
-                            <li>
-                                <Briefcase className="size-5" />
-                                Nghề nghiệp đa dạng
-                            </li>
-                            <li>
-                                <Mail className="size-5" />
-                                Hỗ trợ mọi lúc 24/7
-                            </li>
-                            <li>
-                                <Zap className="size-5" />
-                                Hỗ trợ trãi nghiệm nhanh chóng
-                            </li>
-                            <li>
-                                <Activity className="size-5" />
-                                Giao diện và script tối ưu
-                            </li>
-                            <li>
-                                <LockIcon className="size-5" />
-                                Bảo mật hoàn toàn trên nền tảng FiveM
-                            </li>
-                        </ul>
                     </div>
-                    <div className="border-border/50 relative rounded-3xl border p-3 lg:col-span-3">
-                           <Image src="/img/bugati.webp" className="object-contain rounded-[15px] dark:block" alt="payments illustration dark" width={1207} height={929} />
-                    </div>
-                </div>
-            </div>
-        </section>
+                </section>
                 <section className="py-8 md:py-20">
                     <div className="mx-auto max-w-6xl space-y-12">
                         <div className="relative z-10 grid items-center gap-4 md:grid-cols-2 md:gap-12 px-6">
