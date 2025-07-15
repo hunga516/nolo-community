@@ -166,14 +166,14 @@ export default function Page() {
                                         },
                                         ...transitionVariants,
                                     }}
-                                    className="mt-32 flex flex-col items-center justify-center gap-2 md:flex-row">
+                                    className="mt-12 flex flex-col items-center justify-center gap-2 md:flex-row">
                                     <span className='text-xs text-red-500 italic'>*Nolo Community là máy chủ FiveM dành cho người chơi sở hữu GTA V bản quyền. Chúng tôi không phân phối, chỉnh sửa hay phát hành lại game gốc dưới bất kỳ hình thức nào.</span>
                                 </AnimatedGroup>
                             </div>
                         </div>
 
                         <div className="relative bg-black text-white">
-                            <section className="py-32 mx-auto max-w-7xl relative">
+                            <section className="mt-36 py-32 mx-auto max-w-7xl relative max-sm:mx-4">
                                 <div className="container">
                                     {/* Tiêu đề */}
                                     <div className="mx-auto max-w-3xl text-center">
@@ -184,14 +184,14 @@ export default function Page() {
                                     </div>
 
                                     {/* Các bước */}
-                                    <div className="mx-auto mt-14 flex max-w-5xl flex-col gap-6 lg:px-16">
+                                    <div className="mx-auto mt-14 flex max-w-5xl flex-col gap-24 lg:px-16">
                                         {/* Bước 1 */}
                                         <div className="flex flex-col items-center justify-between min-[960px]:flex-row min-[960px]:gap-10">
                                             <div className="flex gap-4 min-[960px]:max-w-md">
                                                 <div className="flex flex-col items-center justify-between gap-1">
-                                                    <span className="h-20 shrink-0" />
-                                                    <span className="flex size-10 items-center justify-center rounded-full border border-white bg-white/10 font-mono text-lg text-white">1</span>
-                                                    <span className="h-20 w-[3px] bg-gradient-to-b from-transparent to-white opacity-70" />
+                                                    <span className="hidden sm:block h-20 shrink-0" />
+                                                    <span className="flex size-6 sm:size-10 items-center justify-center rounded-full border border-white bg-white/10 font-mono text-base sm:text-lg text-white">1</span>
+                                                    <span className="hidden sm:block h-20 w-[3px] bg-gradient-to-b from-transparent to-white opacity-70" />
                                                 </div>
                                                 <div className="flex flex-col justify-center gap-4 min-[960px]:gap-6 min-[960px]:px-4">
                                                     <h3 className="text-xl min-[960px]:text-2xl">Tải GTA V từ Steam hoặc Epic Games</h3>
@@ -201,9 +201,9 @@ export default function Page() {
                                                 </div>
                                             </div>
                                             <img
-                                                src="/images/fivem/step1.svg"
+                                                src="/img/gta-v.jpg"
                                                 alt="step1"
-                                                className="z-10 max-h-56 w-full rounded-xl border border-white/20 object-cover min-[960px]:aspect-video min-[960px]:w-auto"
+                                                className="z-10 max-sm:mt-12 max-h-56 w-full rounded-xl border border-white/20 object-cover min-[960px]:aspect-video min-[960px]:w-[320px]"
                                             />
                                         </div>
 
@@ -211,11 +211,11 @@ export default function Page() {
                                         <div className="flex flex-col items-center justify-between min-[960px]:flex-row min-[960px]:gap-10">
                                             <div className="flex gap-4 min-[960px]:max-w-md">
                                                 <div className="relative flex flex-col items-center justify-between gap-1">
-                                                    <span className="absolute -top-8 h-8 w-[3px] bg-white opacity-70" />
-                                                    <span className="absolute -bottom-8 h-8 w-[3px] bg-white opacity-70" />
-                                                    <span className="h-20 w-[3px] bg-white opacity-70" />
-                                                    <span className="flex size-10 items-center justify-center rounded-full border border-white bg-white/10 font-mono text-lg text-white">2</span>
-                                                    <span className="h-20 w-[3px] bg-white opacity-70" />
+                                                    <span className="absolute hidden sm:block -top-26 h-26 w-[3px] bg-white opacity-70" />
+                                                    <span className="absolute hidden sm:block -bottom-26 h-26 w-[3px] bg-white opacity-70" />
+                                                    <span className="hidden sm:block h-20 w-[3px] bg-white opacity-70" />
+                                                    <span className="flex size-6 sm:size-10 items-center justify-center rounded-full border border-white bg-white/10 font-mono text-lg text-white">2</span>
+                                                    <span className="hidden sm:block h-20 w-[3px] bg-white opacity-70" />
                                                 </div>
                                                 <div className="flex flex-col justify-center gap-4 min-[960px]:gap-6 min-[960px]:px-4">
                                                     <h3 className="text-xl min-[960px]:text-2xl">Cài FiveM và chọn đường dẫn GTA V</h3>
@@ -225,9 +225,9 @@ export default function Page() {
                                                 </div>
                                             </div>
                                             <img
-                                                src="/images/fivem/step2.svg"
+                                                src="/img/fivem.jpg"
                                                 alt="step2"
-                                                className="z-10 max-h-56 w-full rounded-xl border border-white/20 object-cover min-[960px]:aspect-video min-[960px]:w-auto"
+                                                className="z-10 max-sm:mt-12 max-h-56 w-full rounded-xl border border-white/20 object-cover min-[960px]:aspect-video min-[960px]:w-[320px]"
                                             />
                                         </div>
 
@@ -235,9 +235,9 @@ export default function Page() {
                                         <div className="flex flex-col items-center justify-between min-[960px]:flex-row min-[960px]:gap-10">
                                             <div className="flex gap-4 min-[960px]:max-w-md">
                                                 <div className="flex flex-col items-center justify-between gap-1">
-                                                    <span className="h-20 w-[3px] bg-gradient-to-t from-transparent to-white opacity-70" />
-                                                    <span className="flex size-10 items-center justify-center rounded-full border border-white bg-white/10 font-mono text-lg text-white">3</span>
-                                                    <span className="h-20 shrink-0" />
+                                                    <span className="hidden sm:block h-20 w-[3px] bg-gradient-to-t from-transparent to-white opacity-70" />
+                                                    <span className="flex size-6 sm:size-10 items-center justify-center rounded-full border border-white bg-white/10 font-mono text-lg text-white">3</span>
+                                                    <span className="hidden sm:block h-20 shrink-0" />
                                                 </div>
                                                 <div className="flex flex-col justify-center gap-4 min-[960px]:gap-6 min-[960px]:px-4">
                                                     <h3 className="text-xl min-[960px]:text-2xl">Tìm 'Nolo Community' hoặc nhấn Kết nối</h3>
@@ -247,9 +247,9 @@ export default function Page() {
                                                 </div>
                                             </div>
                                             <img
-                                                src="/images/fivem/step3.svg"
+                                                src="/img/connect.png"
                                                 alt="step3"
-                                                className="z-10 max-h-56 w-full rounded-xl border border-white/20 object-cover min-[960px]:aspect-video min-[960px]:w-auto"
+                                                className="z-10 max-sm:mt-12 max-h-56 w-full rounded-xl border border-white/20 object-cover min-[960px]:aspect-video min-[960px]:w-[320px]"
                                             />
                                         </div>
                                     </div>
