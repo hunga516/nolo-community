@@ -172,6 +172,109 @@ export default function Page() {
                             </div>
                         </div>
 
+                        <div className="relative bg-black text-white">
+                            <section className="py-32 mx-auto max-w-7xl relative">
+                                <div className="container">
+                                    {/* Tiêu đề */}
+                                    <div className="mx-auto max-w-3xl text-center">
+                                        <h2 className="text-3xl font-semibold">Hướng dẫn kết nối máy chủ Nolo Community</h2>
+                                        <p className="mt-4 text-gray-400">
+                                            Làm theo 3 bước đơn giản để bắt đầu chơi trên server của chúng tôi.
+                                        </p>
+                                    </div>
+
+                                    {/* Các bước */}
+                                    <div className="mx-auto mt-14 flex max-w-5xl flex-col gap-6 lg:px-16">
+                                        {/* Bước 1 */}
+                                        <div className="flex flex-col items-center justify-between min-[960px]:flex-row min-[960px]:gap-10">
+                                            <div className="flex gap-4 min-[960px]:max-w-md">
+                                                <div className="flex flex-col items-center justify-between gap-1">
+                                                    <span className="h-20 shrink-0" />
+                                                    <span className="flex size-10 items-center justify-center rounded-full border border-white bg-white/10 font-mono text-lg text-white">1</span>
+                                                    <span className="h-20 w-[3px] bg-gradient-to-b from-transparent to-white opacity-70" />
+                                                </div>
+                                                <div className="flex flex-col justify-center gap-4 min-[960px]:gap-6 min-[960px]:px-4">
+                                                    <h3 className="text-xl min-[960px]:text-2xl">Tải GTA V từ Steam hoặc Epic Games</h3>
+                                                    <p className="text-sm text-gray-400 min-[960px]:text-base">
+                                                        Bạn cần sở hữu bản quyền GTA V từ Steam hoặc Epic Games để sử dụng FiveM.
+                                                    </p>
+                                                </div>
+                                            </div>
+                                            <img
+                                                src="/images/fivem/step1.svg"
+                                                alt="step1"
+                                                className="z-10 max-h-56 w-full rounded-xl border border-white/20 object-cover min-[960px]:aspect-video min-[960px]:w-auto"
+                                            />
+                                        </div>
+
+                                        {/* Bước 2 */}
+                                        <div className="flex flex-col items-center justify-between min-[960px]:flex-row min-[960px]:gap-10">
+                                            <div className="flex gap-4 min-[960px]:max-w-md">
+                                                <div className="relative flex flex-col items-center justify-between gap-1">
+                                                    <span className="absolute -top-8 h-8 w-[3px] bg-white opacity-70" />
+                                                    <span className="absolute -bottom-8 h-8 w-[3px] bg-white opacity-70" />
+                                                    <span className="h-20 w-[3px] bg-white opacity-70" />
+                                                    <span className="flex size-10 items-center justify-center rounded-full border border-white bg-white/10 font-mono text-lg text-white">2</span>
+                                                    <span className="h-20 w-[3px] bg-white opacity-70" />
+                                                </div>
+                                                <div className="flex flex-col justify-center gap-4 min-[960px]:gap-6 min-[960px]:px-4">
+                                                    <h3 className="text-xl min-[960px]:text-2xl">Cài FiveM và chọn đường dẫn GTA V</h3>
+                                                    <p className="text-sm text-gray-400 min-[960px]:text-base">
+                                                        Tải FiveM từ trang chủ, khi cài đặt hãy chọn đúng thư mục chứa GTA V.
+                                                    </p>
+                                                </div>
+                                            </div>
+                                            <img
+                                                src="/images/fivem/step2.svg"
+                                                alt="step2"
+                                                className="z-10 max-h-56 w-full rounded-xl border border-white/20 object-cover min-[960px]:aspect-video min-[960px]:w-auto"
+                                            />
+                                        </div>
+
+                                        {/* Bước 3 */}
+                                        <div className="flex flex-col items-center justify-between min-[960px]:flex-row min-[960px]:gap-10">
+                                            <div className="flex gap-4 min-[960px]:max-w-md">
+                                                <div className="flex flex-col items-center justify-between gap-1">
+                                                    <span className="h-20 w-[3px] bg-gradient-to-t from-transparent to-white opacity-70" />
+                                                    <span className="flex size-10 items-center justify-center rounded-full border border-white bg-white/10 font-mono text-lg text-white">3</span>
+                                                    <span className="h-20 shrink-0" />
+                                                </div>
+                                                <div className="flex flex-col justify-center gap-4 min-[960px]:gap-6 min-[960px]:px-4">
+                                                    <h3 className="text-xl min-[960px]:text-2xl">Tìm 'Nolo Community' hoặc nhấn Kết nối</h3>
+                                                    <p className="text-sm text-gray-400 min-[960px]:text-base">
+                                                        Mở FiveM, tìm kiếm "Nolo Community" hoặc nhấn nút Kết nối nhanh bên dưới.
+                                                    </p>
+                                                </div>
+                                            </div>
+                                            <img
+                                                src="/images/fivem/step3.svg"
+                                                alt="step3"
+                                                className="z-10 max-h-56 w-full rounded-xl border border-white/20 object-cover min-[960px]:aspect-video min-[960px]:w-auto"
+                                            />
+                                        </div>
+                                    </div>
+
+                                    {/* Nút kết nối */}
+                                    <div
+                                        key={1}
+                                        className="bg-foreground/10 rounded-[calc(var(--radius-xl)+0.125rem)] border p-0.5 max-w-fit mx-auto">
+                                        <Button
+                                            asChild
+                                            size="lg"
+                                            className="rounded-xl px-5 text-base">
+                                            <Link href="https://cfx.re/join/lgqbzv" target="_blank">
+                                                <span className="text-nowrap">Kết nối ngay</span>
+                                                <Image alt='fivem logo' width={32} height={32} src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/FiveM-Logo.png/1200px-FiveM-Logo.png" />
+                                            </Link>
+                                        </Button>
+                                    </div>
+                                </div>
+                            </section>
+                        </div>
+
+
+
+
                         <AnimatedGroup
                             variants={{
                                 container: {
@@ -191,7 +294,7 @@ export default function Page() {
                                 /> */}
 
                                 <div className="inset-shadow-2xs ring-background dark:inset-shadow-white/20 bg-background relative mx-auto max-w-6xl overflow-hidden rounded-2xl border p-2 md:p-4 shadow-lg shadow-zinc-950/15 ring-1">
-                                    <div className="absolute bottom-0 left-0 ml-4 md:ml-8 mb-4 md:mb-8 px-2 py-1 z-10 bg-blue-500/80 text-white rounded-sm text-xs md:text-sm truncate max-sm:max-w-48">
+                                    <div className="absolute bottom-0 left-0 ml-4 md:ml-8 mb-4 md:mb-8 px-2 py-1 z-10 bg-white/80 text-white rounded-sm text-xs md:text-sm truncate max-sm:max-w-48">
                                         Sự kiện chào mừng công dân mới đang diễn ra
                                     </div>
                                     <Image
