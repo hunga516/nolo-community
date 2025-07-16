@@ -172,9 +172,9 @@ export default function Page() {
                             </div>
                         </div>
 
-                        <div className="relative bg-black text-white">
-                            <section className="mt-36 py-32 mx-auto max-w-7xl relative max-sm:mx-4">
-                                <div className="container">
+                        <div className="relative bg-black text-white pb-0 sm:pb-46 md:pb-80">
+                            <section className="mt-12 md:mt-20 lg:mt-36 py-12 md:py-20 lg:py-32 mx-auto max-w-7xl relative max-sm:mx-4">
+                                <div className="container mx-auto">
                                     {/* Tiêu đề */}
                                     <div className="mx-auto max-w-3xl text-center">
                                         <h2 className="text-3xl font-semibold">Hướng dẫn kết nối máy chủ Nolo Community</h2>
@@ -200,10 +200,12 @@ export default function Page() {
                                                     </p>
                                                 </div>
                                             </div>
-                                            <img
+                                            <Image
                                                 src="/img/gta-v.jpg"
                                                 alt="step1"
-                                                className="z-10 max-sm:mt-12 max-h-56 w-full rounded-xl border border-white/20 object-cover min-[960px]:aspect-video min-[960px]:w-[320px]"
+                                                className="z-10 max-sm:mt-12 w-full rounded-xl border border-white/20 object-cover min-[960px]:aspect-3/2 min-[960px]:w-[320px]"
+                                                width={960}
+                                                height={640}
                                             />
                                         </div>
 
@@ -211,8 +213,8 @@ export default function Page() {
                                         <div className="flex flex-col items-center justify-between min-[960px]:flex-row min-[960px]:gap-10">
                                             <div className="flex gap-4 min-[960px]:max-w-md">
                                                 <div className="relative flex flex-col items-center justify-between gap-1">
-                                                    <span className="absolute hidden sm:block -top-26 h-26 w-[3px] bg-white opacity-70" />
-                                                    <span className="absolute hidden sm:block -bottom-26 h-26 w-[3px] bg-white opacity-70" />
+                                                    <span className="absolute hidden sm:block -top-[101px] h-[101px] w-[3px] bg-white opacity-70" />
+                                                    <span className="absolute hidden sm:block -bottom-[101px] h-[101px] w-[3px] bg-white opacity-70" />
                                                     <span className="hidden sm:block h-20 w-[3px] bg-white opacity-70" />
                                                     <span className="flex size-6 sm:size-10 items-center justify-center rounded-full border border-white bg-white/10 font-mono text-lg text-white">2</span>
                                                     <span className="hidden sm:block h-20 w-[3px] bg-white opacity-70" />
@@ -224,10 +226,12 @@ export default function Page() {
                                                     </p>
                                                 </div>
                                             </div>
-                                            <img
+                                            <Image
                                                 src="/img/fivem.jpg"
                                                 alt="step2"
-                                                className="z-10 max-sm:mt-12 max-h-56 w-full rounded-xl border border-white/20 object-cover min-[960px]:aspect-video min-[960px]:w-[320px]"
+                                                className="z-10 max-sm:mt-12 w-full rounded-xl border border-white/20 object-cover min-[960px]:aspect-3/2 min-[960px]:w-[320px]"
+                                                width={960}
+                                                height={640}
                                             />
                                         </div>
 
@@ -240,16 +244,18 @@ export default function Page() {
                                                     <span className="hidden sm:block h-20 shrink-0" />
                                                 </div>
                                                 <div className="flex flex-col justify-center gap-4 min-[960px]:gap-6 min-[960px]:px-4">
-                                                    <h3 className="text-xl min-[960px]:text-2xl">Tìm 'Nolo Community' hoặc nhấn Kết nối</h3>
+                                                    <h3 className="text-xl min-[960px]:text-2xl">Tìm `Nolo Community`` hoặc nhấn Kết nối</h3>
                                                     <p className="text-sm text-gray-400 min-[960px]:text-base">
-                                                        Mở FiveM, tìm kiếm "Nolo Community" hoặc nhấn nút Kết nối nhanh bên dưới.
+                                                        Mở FiveM, tìm kiếm `Nolo Community` hoặc nhấn nút Kết nối nhanh bên dưới.
                                                     </p>
                                                 </div>
                                             </div>
-                                            <img
+                                            <Image
                                                 src="/img/connect.png"
                                                 alt="step3"
-                                                className="z-10 max-sm:mt-12 max-h-56 w-full rounded-xl border border-white/20 object-cover min-[960px]:aspect-video min-[960px]:w-[320px]"
+                                                className="z-10 max-sm:mt-12 w-full rounded-xl border border-white/20 object-cover min-[960px]:aspect-3/2 min-[960px]:w-[320px]"
+                                                width={960}
+                                                height={640}
                                             />
                                         </div>
                                     </div>
@@ -257,7 +263,7 @@ export default function Page() {
                                     {/* Nút kết nối */}
                                     <div
                                         key={1}
-                                        className="bg-foreground/10 rounded-[calc(var(--radius-xl)+0.125rem)] border p-0.5 max-w-fit mx-auto">
+                                        className="bg-foreground/10 rounded-[calc(var(--radius-xl)+0.125rem)] border p-0.5 max-w-fit mx-auto mt-20">
                                         <Button
                                             asChild
                                             size="lg"
@@ -287,14 +293,14 @@ export default function Page() {
                                 },
                                 ...transitionVariants,
                             }}>
-                            <div className="relative mt-8 overflow-hidden px-2 sm:mr-0 sm:mt-6 md:mt-12">
+                            <div className="max-sm:mt-[190px]">
                                 {/* <div
                                     aria-hidden
                                     className="bg-linear-to-b to-background absolute inset-0 z-10 from-transparent from-35%"
                                 /> */}
 
-                                <div className="inset-shadow-2xs ring-background dark:inset-shadow-white/20 bg-background relative mx-auto max-w-6xl overflow-hidden rounded-2xl border p-2 md:p-4 shadow-lg shadow-zinc-950/15 ring-1">
-                                    <div className="absolute bottom-0 left-0 ml-4 md:ml-8 mb-4 md:mb-8 px-2 py-1 z-10 bg-white/80 text-white rounded-sm text-xs md:text-sm truncate max-sm:max-w-48">
+                                <div className="inset-shadow-2xs ring-background dark:inset-shadow-white/20 bg-background relative mx-auto max-w-6xl overflow-hidden rounded-2xl border p-2 md:p-4 shadow-lg shadow-zinc-950/15 ring-1 -mt-72">
+                                    <div className="absolute bottom-0 left-0 ml-4 md:ml-8 mb-4 md:mb-8 px-2 py-1 z-10 text-white rounded-sm text-xs md:text-sm truncate max-sm:max-w-48">
                                         Sự kiện chào mừng công dân mới đang diễn ra
                                     </div>
                                     <Image
@@ -316,7 +322,7 @@ export default function Page() {
                         </AnimatedGroup>
                     </div>
                 </section>
-                <section className="py-16 md:py-32">
+                <section className="py-16 md:py-32 mt-0 sm:mt-6 md:mt-12">
                     <div className="mx-auto max-w-6xl px-6">
                         <div className="grid items-center gap-12 md:grid-cols-2 md:gap-12 lg:grid-cols-5 lg:gap-24">
                             <div className="lg:col-span-2">
@@ -363,10 +369,10 @@ export default function Page() {
                             <p className="max-w-sm sm:ml-auto">Đội ngũ cảnh sát chuyên nghiệp, vui vẻ, hoà đồng công tư phân minh luôn có mặt khi bạn thực hiện các hoạt động tội phạm.</p>
                         </div>
                         <div className="relative mt-8 overflow-hidden px-2 sm:mr-0 sm:mt-6 md:mt-12">
-                            <div
+                            {/* <div
                                 aria-hidden
                                 className="bg-linear-to-b to-background absolute inset-0 z-10 from-transparent from-70%"
-                            />
+                            /> */}
                             <div className="inset-shadow-2xs ring-background dark:inset-shadow-white/20 bg-background relative mx-auto max-w-6xl overflow-hidden rounded-2xl border p-2 md:p-4 shadow-lg shadow-zinc-950/15 ring-1">
                                 <Image
                                     className="bg-background aspect-15/8 relative hidden rounded-2xl dark:block"
@@ -426,10 +432,10 @@ export default function Page() {
                             <p className="max-w-sm sm:ml-auto">Đội ngũ y tế chuyên nghiệp, tận tâm, luôn sẵn sàng hỗ trợ và có mặt kịp thời khi bạn gặp sự cố hoặc chấn thương trong thành phố.</p>
                         </div>
                         <div className="relative mt-8 overflow-hidden px-2 sm:mr-0 sm:mt-6 md:mt-12">
-                            <div
+                            {/* <div
                                 aria-hidden
                                 className="bg-linear-to-b to-background absolute inset-0 z-10 from-transparent from-70%"
-                            />
+                            /> */}
                             <div className="inset-shadow-2xs ring-background dark:inset-shadow-white/20 bg-background relative mx-auto max-w-6xl overflow-hidden rounded-2xl border p-2 md:p-4 shadow-lg shadow-zinc-950/15 ring-1">
                                 <Image
                                     className="bg-background aspect-15/8 relative hidden rounded-2xl dark:block"
@@ -491,10 +497,10 @@ export default function Page() {
                             </p>
                         </div>
                         <div className="relative mt-8 overflow-hidden px-2 sm:mr-0 sm:mt-6 md:mt-12">
-                            <div
+                            {/* <div
                                 aria-hidden
                                 className="bg-linear-to-b to-background absolute inset-0 z-10 from-transparent from-70%"
-                            />
+                            /> */}
                             <div className="inset-shadow-2xs ring-background dark:inset-shadow-white/20 bg-background relative mx-auto max-w-6xl overflow-hidden rounded-2xl border p-2 md:p-4 shadow-lg shadow-zinc-950/15 ring-1">
                                 <Image
                                     className="bg-background aspect-15/8 relative hidden rounded-2xl dark:block"
