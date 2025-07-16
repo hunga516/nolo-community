@@ -8,10 +8,10 @@ import LogoWithName from '@/components/common/logo'
 
 const menuItems = [
     { name: 'Trang chủ', href: '/' },
-    { name: 'Nghề nghiệp', href: '/nghe-nghiep' },
-    { name: 'Hướng dẫn', href: '/huong-dan' },
+    // { name: 'Nghề nghiệp', href: '/nghe-nghiep' },
+    { name: 'Hướng dẫn', href: '#huong-dan' },
     { name: 'Đội ngũ', href: '/doi-ngu' },
-    { name: 'Tin tức', href: '/tin-tuc' },
+    // { name: 'Tin tức', href: '/tin-tuc' },
 ]
 
 export const Header = () => {
@@ -55,7 +55,7 @@ export const Header = () => {
                                         <Link
                                             href={item.href}
                                             className="text-muted-foreground hover:text-accent-foreground block duration-150">
-                                            <span>{item.name}</span>
+                                            <span className={isScrolled ? "text-black" : ""}>{item.name}</span>
                                         </Link>
                                     </li>
                                 ))}
@@ -70,7 +70,7 @@ export const Header = () => {
                                             <Link
                                                 href={item.href}
                                                 className="text-muted-foreground hover:text-accent-foreground block duration-150">
-                                                <span>{item.name}</span>
+                                                <span className={isScrolled ? "text-black" : ""}>{item.name}</span>
                                             </Link>
                                         </li>
                                     ))}
@@ -91,6 +91,6 @@ export const Header = () => {
                     </div>
                 </div>
             </nav>
-        </header>
+        </header >
     )
 }

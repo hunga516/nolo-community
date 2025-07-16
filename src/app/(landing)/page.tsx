@@ -172,7 +172,7 @@ export default function Page() {
                             </div>
                         </div>
 
-                        <div className="relative bg-black text-white pb-0 sm:pb-46 md:pb-80">
+                        <div id="huong-dan" className="relative bg-black/90 text-white pb-0 sm:pb-46 md:pb-80">
                             <section className="mt-12 md:mt-20 lg:mt-36 py-12 md:py-20 lg:py-32 mx-auto max-w-7xl relative max-sm:mx-4">
                                 <div className="container mx-auto">
                                     {/* Tiêu đề */}
