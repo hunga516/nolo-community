@@ -9,7 +9,7 @@ import LogoWithName from '@/components/common/logo'
 const menuItems = [
     { name: 'Trang chủ', href: '/' },
     // { name: 'Nghề nghiệp', href: '/nghe-nghiep' },
-    { name: 'Hướng dẫn', href: '#huong-dan' },
+    { name: 'Hướng dẫn', href: '/#huong-dan' },
     { name: 'Đội ngũ', href: '/doi-ngu' },
     // { name: 'Tin tức', href: '/tin-tuc' },
 ]
