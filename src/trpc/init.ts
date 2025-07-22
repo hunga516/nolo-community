@@ -4,7 +4,7 @@ import { auth } from "@clerk/nextjs/server";
 import { db } from "@/db";
 import { usersTable } from "@/db/schema";
 import { eq } from "drizzle-orm";
-import { ratelimit } from "@/lib/ratelimit";
+// import { ratelimit } from "@/lib/ratelimit";
 import { cache } from "react";
 
 export const createTRPCContext = cache(async () => {
