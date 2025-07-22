@@ -17,7 +17,7 @@ export const VideoGridCard = ({ video }: VideoGridCardProps) => {
     });
 
     return (
-        <Link href={`/videos/${video.id}`} className="block w-full space-y-2">
+        <Link href={`/community/videos/${video.id}`} className="block w-full space-y-2">
             <div className="relative aspect-video w-full rounded-md overflow-hidden bg-muted">
                 {video.muxPlaybackId ? (
                     <VideoThumbnail

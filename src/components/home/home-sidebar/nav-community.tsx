@@ -33,80 +33,80 @@ import { useAuth, useClerk } from "@clerk/nextjs";
 const navMain = [
   {
     title: "Trang chủ",
-    url: "/",
+    url: "/community",
     icon: House,
     isActive: false,
   },
   {
     title: "Live Stream",
-    url: "/live-stream",
+    url: "/community/live-stream",
     icon: MonitorPlay,
   },
   {
     title: "Cộng đồng",
-    url: "/cong-dong",
+    url: "/community/cong-dong",
     icon: Earth,
     isActive: false,
     auth: true,
     items: [
       {
         title: "Bạn bè",
-        url: "/cong-dong/ban-be",
+        url: "/community/cong-dong/ban-be",
         auth: true,
       },
       {
         title: "Nhóm của bạn",
-        url: "/cong-dong/nhom-cua-ban",
+        url: "/community/cong-dong/nhom-cua-ban",
         auth: true,
       },
     ],
   },
   {
     title: "Xu hướng",
-    url: "/xu-huong",
+    url: "/community/xu-huong",
     icon: TrendingUp,
     isActive: false,
   },
   {
     title: "Giao dịch",
-    url: "/giao-dich",
+    url: "/community/giao-dich",
     icon: DollarSign,
     auth: true,
     items: [
       {
         title: "Đấu giá",
-        url: "/giao-dich/dau-gia",
+        url: "/community/giao-dich/dau-gia",
         auth: true,
       },
       {
         title: "Chợ",
-        url: "/giao-dich/cho",
+        url: "/community/giao-dich/cho",
         auth: true,
       },
     ],
   },
   {
     title: "Hướng dẫn cài game",
-    url: "/huong-dan-cai-game",
+    url: "/community/huong-dan-cai-game",
     icon: BookOpen,
     items: [
       {
         title: "Tải về",
-        url: "/tai-ve",
+        url: "/community/tai-ve",
       },
       {
         title: "Cài đặt",
-        url: "/cai-dat",
+        url: "/community/cai-dat",
       },
       {
         title: "Hướng dẫn cơ bản",
-        url: "/huong-dan-co-ban",
+        url: "/community/huong-dan-co-ban",
       },
     ],
   },
   {
     title: "Hướng dẫn việc làm",
-    url: "/huong-dan-viec-lam",
+    url: "/community/huong-dan-viec-lam",
     icon: Scroll,
   },
 ];

@@ -23,7 +23,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
   return (
     <Sidebar collapsible="icon" {...props}>
       <SidebarHeader className={`${open && "px-4"} mt-2`}>
-        <Link href="/" className={`flex items-center gap-2`}>
+        <Link href="/community" className={`flex items-center gap-2`}>
           <Image
             src="/logo.svg"
             alt="logo nolo"
