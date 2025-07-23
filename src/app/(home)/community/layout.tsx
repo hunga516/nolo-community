@@ -1,5 +1,5 @@
-import HomeNavbar from "@/components/home/home-navbar";
-import { HomeSidebar } from "@/components/home/home-sidebar";
+import HomeNavbar from "@/components/sections/home/home-navbar";
+import { HomeSidebar } from "@/components/sections/home/home-sidebar";
 import Command from "@/modules/home/logic/command";
 import { HomeBreadcumb } from "@/modules/home/ui/components/breadcum";
 
