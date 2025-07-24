@@ -31,8 +31,8 @@ export default function Page() {
     return (
         <>
             <main className="overflow-hidden">
-                <div className="absolute w-full h-[1200px] -z-10">
-                    <div className="absolute inset-0 bg-gradient-to-b from-transparent to-background from-80% z-10 backdrop-blur-xl"></div>
+                <div className="absolute w-full h-[980px] -z-10">
+                    <div className="absolute inset-0  z-10 backdrop-blur-xl"></div>
                     <Image className='object-cover bg-center bg-left' src="/img/bg-city-sunset.jpg" alt='background' fill />
                 </div>
                 <div
@@ -189,8 +189,8 @@ export default function Page() {
                             </div>
                         </div>
 
-                        <div id="huong-dan" className="relative bg-black/90 text-white pb-0 sm:pb-46 md:pb-80 mt-[270px]">
-                            <section className="mt-12 md:mt-20 lg:mt-36 py-12 md:py-20 lg:py-32 mx-auto max-w-7xl relative max-sm:mx-4">
+                        <div id="huong-dan" className="relative bg-black/90 text-white pb-0 sm:pb-46 md:pb-80 mt-[312px] sm:mt-[300px] md:mt-[164px] lg:mt-[140px] xl:mt-[92px]">
+                            <section className=" py-12 md:py-20 lg:py-32 mx-auto max-w-7xl relative max-sm:mx-4">
                                 <div className="container mx-auto">
                                     {/* Tiêu đề */}
                                     <div className="mx-auto max-w-3xl text-center">
