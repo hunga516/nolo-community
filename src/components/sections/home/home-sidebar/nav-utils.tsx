@@ -32,24 +32,24 @@ import { useAuth, useClerk } from "@clerk/nextjs";
 const utils = [
   {
     name: "Cửa hàng",
-    url: "/cua-hang",
+    url: "/community/cua-hang",
     icon: Store,
     auth: true,
   },
   {
     name: "Nhiệm vụ",
-    url: "/nhiem-vu",
+    url: "/community/nhiem-vu",
     icon: NotebookPen,
     auth: true,
   },
   {
     name: "Bản đồ thế giới",
-    url: "/ban-do-the-gioi",
+    url: "/community/ban-do-the-gioi",
     icon: Map,
   },
   {
     name: "Meeting",
-    url: "/meeting",
+    url: "/community/meeting",
     icon: ZoomIn,
   },
 ];

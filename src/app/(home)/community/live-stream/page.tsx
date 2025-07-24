@@ -10,11 +10,11 @@ const Page = async () => {
     const { videos } = await readAllVideos()
 
     return (
-        <div className="px-4">
+        <div className="px-4 mt-4">
             <div>
                 <CreateLiveStream />
             </div>
-            <h1 className="text-xl font-bold mt-8">
+            <h1 className="text-xl font-bold mt-4">
                 Đang trực tuyến
             </h1>
 
