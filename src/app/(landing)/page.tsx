@@ -5,6 +5,7 @@ import Image from 'next/image'
 import { TextEffect } from '@/components/ui/text-effect'
 import { AnimatedGroup } from '@/components/ui/animated-group'
 import JoinCommunityButton from '@/components/sections/landing/header/join-community-button'
+import ImagesCarousel from '@/components/sections/landing/carousel'
 
 const transitionVariants = {
     item: {
@@ -31,7 +32,7 @@ export default function Page() {
         <>
             <main className="overflow-hidden">
                 <div className="absolute w-full h-[1200px] -z-10">
-                    <div className="absolute inset-0 bg-gradient-to-b from-transparent to-background from-80% z-10 backdrop-blur-md "></div>
+                    <div className="absolute inset-0 bg-gradient-to-b from-transparent to-background from-80% z-10 backdrop-blur-xl"></div>
                     <Image className='object-cover bg-center bg-left' src="/img/bg-city-sunset.jpg" alt='background' fill />
                 </div>
                 <div
@@ -154,7 +155,7 @@ export default function Page() {
                                     </Button> */}
                                 </AnimatedGroup>
 
-                                <AnimatedGroup
+                                {/* <AnimatedGroup
                                     variants={{
                                         container: {
                                             visible: {
@@ -168,11 +169,27 @@ export default function Page() {
                                     }}
                                     className="mt-12 flex flex-col items-center justify-center gap-2 md:flex-row">
                                     <span className='text-xs text-red-500 italic'>*Nolo Community là máy chủ FiveM dành cho người chơi sở hữu GTA V bản quyền. Chúng tôi không phân phối, chỉnh sửa hay phát hành lại game gốc dưới bất kỳ hình thức nào.</span>
+                                </AnimatedGroup> */}
+
+                                <AnimatedGroup
+                                    variants={{
+                                        container: {
+                                            visible: {
+                                                transition: {
+                                                    staggerChildren: 0.05,
+                                                    delayChildren: 0.75,
+                                                },
+                                            },
+                                        },
+                                        ...transitionVariants,
+                                    }}
+                                    className="mt-12">
+                                    <ImagesCarousel />
                                 </AnimatedGroup>
                             </div>
                         </div>
 
-                        <div id="huong-dan" className="relative bg-black/90 text-white pb-0 sm:pb-46 md:pb-80">
+                        <div id="huong-dan" className="relative bg-black/90 text-white pb-0 sm:pb-46 md:pb-80 mt-[270px]">
                             <section className="mt-12 md:mt-20 lg:mt-36 py-12 md:py-20 lg:py-32 mx-auto max-w-7xl relative max-sm:mx-4">
                                 <div className="container mx-auto">
                                     {/* Tiêu đề */}
