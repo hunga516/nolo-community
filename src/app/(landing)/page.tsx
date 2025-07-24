@@ -31,8 +31,8 @@ export default function Page() {
         <>
             <main className="overflow-hidden">
                 <div className="absolute w-full h-[1200px] -z-10">
-                    <div className="absolute inset-0 bg-gradient-to-b from-transparent to-background from-80% z-10"></div>
-                    <Image className='object-cover' src="/img/background.jpg" alt='background' fill />
+                    <div className="absolute inset-0 bg-gradient-to-b from-transparent to-background from-80% z-10 backdrop-blur-md "></div>
+                    <Image className='object-cover bg-center bg-left' src="/img/bg-city-sunset.jpg" alt='background' fill />
                 </div>
                 <div
                     aria-hidden
@@ -77,11 +77,11 @@ export default function Page() {
                                 height="4095"
                             />
                         </AnimatedGroup>
-                        <div className="absolute inset-0 -z-10 size-full [background:radial-gradient(125%_125%_at_50%_100%,transparent_0%,var(--color-background)_75%)]"></div>
+                        {/* <div className="absolute inset-0 -z-10 size-full [background:radial-gradient(125%_125%_at_50%_100%,transparent_40%,var(--color-background)_75%)]"></div> */}
                         <div className="mx-auto max-w-7xl px-6">
                             <div className="text-center relative sm:mx-auto lg:mr-auto lg:mt-0">
 
-                                {/* 3 icon */}
+                                {/* 3 icon
                                 <AnimatedGroup variants={transitionVariants}>
                                     <div className="absolute right-0 sm:-right-2 md:right- lg:right-36 xl:right-10 top-15 sm:top-20 lg:top-16 -rotate-120 w-[20px] h-[20px] sm:w-[28px] sm:h-[28px] xl:w-[32px] xl:h-[32px]">
                                         <Image src="/img/sandwich.png" fill alt='sandwich' />
@@ -92,7 +92,7 @@ export default function Page() {
                                     <div className="absolute right-2 sm:right-5 md:right- lg:right-26 xl:right-20 top-50 sm:top-52 lg:top-62 xl:top-80 rotate-200 scale-y-[-1] w-[20px] h-[20px] sm:w-[28px] sm:h-[28px] xl:w-[32px] xl:h-[32px]">
                                         <Image src="/img/truck.png" fill alt='truck' />
                                     </div>
-                                </AnimatedGroup>
+                                </AnimatedGroup> */}
 
 
                                 <AnimatedGroup variants={transitionVariants}>
@@ -137,7 +137,7 @@ export default function Page() {
                                             size="lg"
                                             className="rounded-xl px-5 text-base">
                                             <Link href="https://cfx.re/join/lgqbzv" target="_blank">
-                                                <span className="text-nowrap">Kết nối ngay</span>
+                                                <span className="text-nowrap text-[#fe7201]">Kết nối ngay</span>
                                                 <Image alt='fivem logo' width={32} height={32} src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/FiveM-Logo.png/1200px-FiveM-Logo.png" />
                                             </Link>
                                         </Button>

@@ -54,7 +54,7 @@ export const Header = () => {
                                     <li key={index}>
                                         <Link
                                             href={item.href}
-                                            className="text-muted-foreground hover:text-accent-foreground block duration-150">
+                                            className="text-gray-700 hover:text-accent-foreground block duration-150">
                                             <span className={isScrolled ? "text-black" : ""}>{item.name}</span>
                                         </Link>
                                     </li>
