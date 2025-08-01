@@ -58,7 +58,7 @@ const members3 = [
 
 export default function Page() {
     return (
-        <section className="max-sm:mt-12 py-12 md:py-32">
+        <div className='mt-20'>
             <div className="mx-auto max-w-3xl px-8 lg:px-0">
                 <h2 className="mb-8 text-4xl font-bold md:mb-16 lg:text-5xl">Đội ngũ phát triển</h2>
 
@@ -125,6 +125,6 @@ export default function Page() {
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
     )
 }

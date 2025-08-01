@@ -29,7 +29,7 @@ export const Header = () => {
         <header>
             <nav
                 data-state={menuState && 'active'}
-                className="fixed z-20 w-full px-2">
+                className="fixed z-20 top-0 w-full px-2">
                 <div className={cn('mx-auto mt-2 max-sm:px-4 max-w-6xl transition-all duration-300', isScrolled && 'bg-background/50 max-w-4xl rounded-2xl border backdrop-blur-lg lg:px-5')}>
                     <div className="relative flex flex-wrap items-center justify-between gap-6 py-3 lg:gap-0 lg:py-4">
                         <div className="flex w-full justify-between lg:w-auto">

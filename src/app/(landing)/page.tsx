@@ -1,11 +1,11 @@
 import Link from 'next/link'
 import { Cpu, Lock, Sparkles, Zap, HeartPulse, Siren, ShieldCheck, Handshake, Wrench, Truck, Clock, ThumbsUp, Activity, Mail, LockIcon, Briefcase } from 'lucide-react'
-import { Button } from '@/components/ui/button'
 import Image from 'next/image'
 import { TextEffect } from '@/components/ui/text-effect'
 import { AnimatedGroup } from '@/components/ui/animated-group'
 import JoinCommunityButton from '@/components/sections/landing/header/join-community-button'
 import ImagesCarousel from '@/components/sections/landing/carousel'
+import styles from './landing.module.css'
 
 const transitionVariants = {
     item: {
@@ -33,7 +33,7 @@ export default function Page() {
             <main className="overflow-hidden">
                 <div className="absolute w-full h-[980px] -z-10">
                     <div className="absolute inset-0  z-10 backdrop-blur-xl"></div>
-                    <Image className='object-cover bg-center bg-left' src="/img/bg-city-sunset.jpg" alt='background' fill />
+                    <Image className='object-cover bg-left' src="/img/bg-city-sunset.jpg" alt='background' fill />
                 </div>
                 <div
                     aria-hidden
@@ -130,19 +130,38 @@ export default function Page() {
                                         ...transitionVariants,
                                     }}
                                     className="mt-12 flex flex-col items-center justify-center gap-2 md:flex-row">
-                                    <div
-                                        key={1}
-                                        className="bg-foreground/10 rounded-[calc(var(--radius-xl)+0.125rem)] border p-0.5">
-                                        <Button
-                                            asChild
-                                            size="lg"
-                                            className="rounded-xl px-5 text-base">
-                                            <Link href="https://cfx.re/join/lgqbzv" target="_blank">
-                                                <span className="text-nowrap text-[#fe7201]">Kết nối ngay</span>
-                                                <Image alt='fivem logo' width={32} height={32} src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/FiveM-Logo.png/1200px-FiveM-Logo.png" />
-                                            </Link>
-                                        </Button>
-                                    </div>
+                                    <Link href="https://cfx.re/join/lgqbzv" target="_blank">
+                                        <button type="button" className={styles.button}>
+                                            <div className={styles.points_wrapper}>
+                                                <i className={styles.point}></i>
+                                                <i className={styles.point}></i>
+                                                <i className={styles.point}></i>
+                                                <i className={styles.point}></i>
+                                                <i className={styles.point}></i>
+                                                <i className={styles.point}></i>
+                                                <i className={styles.point}></i>
+                                                <i className={styles.point}></i>
+                                                <i className={styles.point}></i>
+                                                <i className={styles.point}></i>
+                                            </div>
+
+                                            <span className={styles.inner}>
+                                                <svg
+                                                    className={styles.icon}
+                                                    fill="none"
+                                                    stroke="currentColor"
+                                                    viewBox="0 0 24 24"
+                                                    xmlns="http://www.w3.org/2000/svg"
+                                                    strokeLinecap="round"
+                                                    strokeLinejoin="round"
+                                                    strokeWidth="2"
+                                                >
+                                                    <path d="M12 2 L14.8 8.6 L22 9.3 L17 14 L18.3 21 L12 17.8 L5.7 21 L7 14 L2 9.3 L9.2 8.6 Z" />
+                                                </svg>
+                                                Chơi ngay
+                                            </span>
+                                        </button>
+                                    </Link>
                                     {/* <Button
                                         key={2}
                                         asChild
@@ -183,13 +202,13 @@ export default function Page() {
                                         },
                                         ...transitionVariants,
                                     }}
-                                    className="mt-12">
+                                    className="mt-12 mx-2 sm:mx-16 md:mx-36">
                                     <ImagesCarousel />
                                 </AnimatedGroup>
                             </div>
                         </div>
 
-                        <div id="huong-dan" className="relative bg-black/90 text-white pb-0 sm:pb-46 md:pb-80 mt-[312px] sm:mt-[300px] md:mt-[164px] lg:mt-[140px] xl:mt-[92px]">
+                        <div id="huong-dan" className="relative bg-black/90 text-white pb-40 sm:pb-46 md:pb-80 mt-[312px] sm:mt-[300px] md:mt-[164px] lg:mt-[140px] xl:mt-[92px]">
                             <section className=" py-12 md:py-20 lg:py-32 mx-auto max-w-7xl relative max-sm:mx-4">
                                 <div className="container mx-auto">
                                     {/* Tiêu đề */}
@@ -244,7 +263,7 @@ export default function Page() {
                                                 </div>
                                             </div>
                                             <Image
-                                                src="/img/fivem.jpg"
+                                                src="/img/fivem.png"
                                                 alt="step2"
                                                 className="z-10 max-sm:mt-12 w-full rounded-xl border border-white/20 object-cover min-[960px]:aspect-3/2 min-[960px]:w-[320px]"
                                                 width={960}
@@ -261,10 +280,43 @@ export default function Page() {
                                                     <span className="hidden sm:block h-20 shrink-0" />
                                                 </div>
                                                 <div className="flex flex-col justify-center gap-4 min-[960px]:gap-6 min-[960px]:px-4">
-                                                    <h3 className="text-xl min-[960px]:text-2xl">Tìm `Nolo Community`` hoặc nhấn Kết nối</h3>
+                                                    <h3 className="text-xl min-[960px]:text-2xl">Tìm `Nolo Community` hoặc nhấn Kết nối bên dưới</h3>
                                                     <p className="text-sm text-gray-400 min-[960px]:text-base">
                                                         Mở FiveM, tìm kiếm `Nolo Community` hoặc nhấn nút Kết nối nhanh bên dưới.
                                                     </p>
+                                                    {/* Nút kết nối */}
+                                                    <Link href="https://cfx.re/join/lgqbzv" target="_blank" className='mt-4'>
+                                                        <button type="button" className={styles.button}>
+                                                            <div className={styles.points_wrapper}>
+                                                                <i className={styles.point}></i>
+                                                                <i className={styles.point}></i>
+                                                                <i className={styles.point}></i>
+                                                                <i className={styles.point}></i>
+                                                                <i className={styles.point}></i>
+                                                                <i className={styles.point}></i>
+                                                                <i className={styles.point}></i>
+                                                                <i className={styles.point}></i>
+                                                                <i className={styles.point}></i>
+                                                                <i className={styles.point}></i>
+                                                            </div>
+
+                                                            <span className={styles.inner}>
+                                                                <svg
+                                                                    className={styles.icon}
+                                                                    fill="none"
+                                                                    stroke="currentColor"
+                                                                    viewBox="0 0 24 24"
+                                                                    xmlns="http://www.w3.org/2000/svg"
+                                                                    strokeLinecap="round"
+                                                                    strokeLinejoin="round"
+                                                                    strokeWidth="2"
+                                                                >
+                                                                    <path d="M12 2 L14.8 8.6 L22 9.3 L17 14 L18.3 21 L12 17.8 L5.7 21 L7 14 L2 9.3 L9.2 8.6 Z" />
+                                                                </svg>
+                                                                Kết nối tự động
+                                                            </span>
+                                                        </button>
+                                                    </Link>
                                                 </div>
                                             </div>
                                             <Image
@@ -275,21 +327,6 @@ export default function Page() {
                                                 height={640}
                                             />
                                         </div>
-                                    </div>
-
-                                    {/* Nút kết nối */}
-                                    <div
-                                        key={1}
-                                        className="bg-foreground/10 rounded-[calc(var(--radius-xl)+0.125rem)] border p-0.5 max-w-fit mx-auto mt-20">
-                                        <Button
-                                            asChild
-                                            size="lg"
-                                            className="rounded-xl px-5 text-base">
-                                            <Link href="https://cfx.re/join/lgqbzv" target="_blank">
-                                                <span className="text-nowrap">Kết nối ngay</span>
-                                                <Image alt='fivem logo' width={32} height={32} src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/FiveM-Logo.png/1200px-FiveM-Logo.png" />
-                                            </Link>
-                                        </Button>
                                     </div>
                                 </div>
                             </section>
