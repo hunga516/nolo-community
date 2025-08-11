@@ -107,7 +107,7 @@ const CreateLiveStream = () => {
                     )}
                 </DialogFooter>
             </DialogContent>
-        </Dialog >
+        </Dialog>
     )
 }
 

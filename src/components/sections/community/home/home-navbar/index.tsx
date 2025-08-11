@@ -1,10 +1,10 @@
 "use client";
 
-import AuthButton from "@/modules/auth/ui/components/auth-button";
 import { SidebarTrigger, useSidebar } from "@/components/ui/sidebar";
 import InputSearch from "./input-search";
 import { UserContextProvider } from "@/contexts/user.context";
 import CoinsButton from "./coins-button";
+import AuthButton from "./auth-button";
 
 const HomeNavbar = () => {
   const { open } = useSidebar();

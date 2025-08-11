@@ -4,9 +4,6 @@ import { Clapperboard } from "lucide-react";
 import Image from "next/image";
 
 const AuthButton = () => {
-  console.log("hihi");
-
-
   return (
     <>
       <SignedOut>

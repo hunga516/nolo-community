@@ -32,7 +32,7 @@ export async function HomeBreadcumb() {
     <Breadcrumb className="p-4 -mb-4 sticky top-16 z-10 bg-white">
       <BreadcrumbList>
         <BreadcrumbItem>
-          <BreadcrumbLink href="/">Trang chủ</BreadcrumbLink>
+          <BreadcrumbLink href="/community">Trang chủ</BreadcrumbLink>
         </BreadcrumbItem>
         <BreadcrumbSeparator />
         <BreadcrumbItem>

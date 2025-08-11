@@ -20,7 +20,7 @@ const Page = async () => {
 
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-2">
                 {videos.map((video, index) => (
-                    <Link key={index} href={`/live-stream/${video._id}`}>
+                    <Link key={index} href={`/community/live-stream/${video._id}`}>
                         <VideoThumbnail
                             imageUrl={video.muxThumbnailUrl}
                             previewUrl={video.muxPreviewUrl}

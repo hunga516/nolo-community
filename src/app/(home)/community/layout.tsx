@@ -1,5 +1,6 @@
-import HomeNavbar from "@/components/sections/home/home-navbar";
-import { HomeSidebar } from "@/components/sections/home/home-sidebar";
+import CheckCid from "@/components/sections/community/(auth)/check-cid";
+import HomeNavbar from "@/components/sections/community/home/home-navbar";
+import { HomeSidebar } from "@/components/sections/community/home/home-sidebar";
 import Command from "@/modules/home/logic/command";
 import { HomeBreadcumb } from "@/modules/home/ui/components/breadcum";
 
@@ -9,18 +10,21 @@ interface LayoutProps {
 
 const Layout = ({ children }: LayoutProps) => {
   return (
-    <HomeSidebar>
-      <div>
-        <HomeNavbar />
-        <div className="max-w-screen-2xl mx-auto mt-16">
-          <HomeBreadcumb />
-          <div className="">
-            {children}
+    <>
+      <CheckCid />
+      <HomeSidebar>
+        <div>
+          <HomeNavbar />
+          <div className="max-w-screen-2xl mx-auto mt-16">
+            <HomeBreadcumb />
+            <div className="">
+              {children}
+            </div>
           </div>
         </div>
-      </div>
-      <Command />
-    </HomeSidebar>
+        <Command />
+      </HomeSidebar>
+    </>
   )
 };
 
