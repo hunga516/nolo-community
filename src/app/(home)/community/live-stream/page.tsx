@@ -9,6 +9,9 @@ import Link from "next/link"
 const Page = async () => {
     const { videos } = await readAllVideos()
 
+    console.log("day la trang livestream, dung phai log o server");
+
+
     return (
         <div className="px-4 mt-4">
             <div>

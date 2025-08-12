@@ -9,6 +9,9 @@ interface LayoutProps {
 }
 
 const Layout = ({ children }: LayoutProps) => {
+
+  console.log("log o layout, dung phai la server");
+
   return (
     <>
       <CheckCid />
