@@ -8,7 +8,22 @@ import { trpc } from "@/trpc/client";
 import { Suspense } from "react";
 import { ErrorBoundary } from "react-error-boundary";
 
+interface Video {
+  id: string;
+  title: string;
+  description?: string;
+  thumbnailUrl: string;
+  previewUrl?: string;
+  duration: number;
+  visibility: "public" | "private";
+  muxStatus?: string;
+  createdAt: string;
+}
 
+interface VideoPage {
+  items: Video[];
+  nextCursor?: string;
+}
 
 export const SuggestionSection = () => {
     return (
@@ -34,7 +49,7 @@ const SuggestionSectionSuspense = () => {
     const [videos, query] = trpc.videos.getMany.useSuspenseInfiniteQuery({
         limit: DEFAULT_LIMIT,
     }, {
-        getNextPageParam: (lastPage) => lastPage.nextCursor,
+        getNextPageParam: (lastPage : VideoPage) => lastPage.nextCursor,
     })
 
     return (
