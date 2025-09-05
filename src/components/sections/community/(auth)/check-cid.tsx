@@ -18,7 +18,7 @@ import { useState } from "react"
 import { toast } from "sonner"
 
 const CheckCid = () => {
-    const { user } = useUser()
+    const { user, isLoaded } = useUser()
     const { isSignedIn } = useAuth()
     const [cid, setCid] = useState("")
 
@@ -47,7 +47,8 @@ const CheckCid = () => {
 
     console.log("log o client");
 
-
+    if (!isLoaded) return null
+    if (!isSigned) return null
     return (
         <Dialog open={!user?.publicMetadata.cid && isSignedIn}>
             <DialogContent>
