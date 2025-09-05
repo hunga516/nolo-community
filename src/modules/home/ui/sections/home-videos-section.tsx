@@ -37,7 +37,7 @@ const HomeVideoSectionSuspense = ({ categoryId }: HomeVideoSectionProps) => {
         categoryId,
         limit: DEFAULT_LIMIT,
     }, {
-        getNextPageParam: (lastPage) => lastPage.nextCursor,
+        getNextPageParam: (lastPage : any) => lastPage.nextCursor,
     })
 
     return (
