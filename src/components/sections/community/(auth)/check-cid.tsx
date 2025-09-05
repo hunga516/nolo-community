@@ -48,7 +48,7 @@ const CheckCid = () => {
     console.log("log o client");
 
     if (!isLoaded) return null
-    if (!isSigned) return null
+    if (!isSignedIn) return null
     return (
         <Dialog open={!user?.publicMetadata.cid && isSignedIn}>
             <DialogContent>
