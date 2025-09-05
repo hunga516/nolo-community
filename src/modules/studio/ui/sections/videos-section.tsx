@@ -13,6 +13,23 @@ import moment from "@/lib/moment";
 import { Globe2Icon, Lock } from "lucide-react";
 import { Skeleton } from "@/components/ui/skeleton";
 
+interface Video {
+  id: string;
+  title: string;
+  description?: string;
+  thumbnailUrl: string;
+  previewUrl?: string;
+  duration: number;
+  visibility: "public" | "private";
+  muxStatus?: string;
+  createdAt: string;
+}
+
+interface VideoPage {
+  items: Video[];
+  nextCursor?: string;
+}
+
 const VideosSection = () => {
     return (
         <Suspense fallback={<VideoSectionSkeleton />}>
@@ -82,7 +99,7 @@ const VideosSectionSuspense = () => {
             limit: DEFAULT_LIMIT,
         },
         {
-            getNextPageParam: (lastPage) => lastPage.nextCursor,
+            getNextPageParam: (lastPage : VideoPage) => lastPage.nextCursor,
         },
     );
 
