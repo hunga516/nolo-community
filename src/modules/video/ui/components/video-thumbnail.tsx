@@ -8,7 +8,7 @@ import { THUMBNAIL_FALLBACK } from "../../constants"
 interface VideoThumbnailProps {
     imageUrl?: string | null
     title: string
-    duration: number | null
+    duration?: number | null
     previewUrl?: string | null
 }
 
@@ -29,7 +29,7 @@ export const VideoThumbnail = ({
                     alt={title}
                     fill
                     unoptimized
-                    className="size-full group-hover:opacity-0"
+                    className="size-full group-hover:opacity-0 object-cover bg-black"
                     onError={() => setMainSrc("/img/only-audio-thumbnail.png")}
                 />
                 <Image
@@ -37,7 +37,7 @@ export const VideoThumbnail = ({
                     alt={title}
                     fill
                     unoptimized
-                    className="size-full opacity-0 group-hover:opacity-100"
+                    className="size-full opacity-0 group-hover:opacity-100 object-cover bg-black"
                     onError={() => setPreviewSrc("/img/only-audio-thumbnail.png")}
                 />
 

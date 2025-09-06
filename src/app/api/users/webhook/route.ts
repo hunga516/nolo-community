@@ -4,6 +4,8 @@ import { WebhookEvent } from "@clerk/nextjs/server";
 import { db } from "@/db";
 import { usersTable } from "@/db/schema";
 import { eq } from "drizzle-orm";
+import axiosInstance from "../../axios";
+import { clerkClient } from "@/lib/clerk";
 
 export async function POST(req: Request) {
   const SIGNING_SECRET = process.env.CLERK_SIGNING_SECRET;
@@ -57,13 +59,33 @@ export async function POST(req: Request) {
   if (eventType === "user.created") {
     const { data } = evt;
 
-    await db.insert(usersTable).values({
-      clerkId: data.id,
-      name: `${data.first_name} ${data.last_name}`,
-      imageUrl: data.image_url,
-      email: data.image_url ?? "", // Tránh lỗi nếu email không tồn tại
-      age: 18, // Gán giá trị mặc định cho age
-    });
+    try {
+      await db.insert(usersTable).values({
+        clerkId: data.id,
+        name: `${data.first_name} ${data.last_name}`,
+        imageUrl: data.image_url,
+        email: data.email_addresses[0].email_address ?? "",
+        age: 18,
+      });
+
+      const response = await axiosInstance.post('/auth/register', {
+        clerkId: data.id,
+        name: `${data.first_name} ${data.last_name}`,
+        imageUrl: data.image_url,
+        email: data.email_addresses[0].email_address ?? "default email",
+        username: data.email_addresses[0].email_address ?? "default username",
+        password: "123456"
+      });
+
+      await clerkClient.users.updateUserMetadata(data.id, {
+        publicMetadata: {
+          user_id: response.data._id,
+          userId: response.data.userId
+        }
+      });
+    } catch (err) {
+      console.log("Error when register", err);
+    }
   }
 
   if (eventType === "user.deleted") {

@@ -10,6 +10,14 @@ interface VideoPlayerProps {
     onPlay?: () => void;
 }
 
+export const VideoPlayerSkeleton = () => {
+    return (
+        <div className="aspect-video bg-black rounded-xl">
+
+        </div>
+    )
+}
+
 const VideoPlayer = ({
     playbackId,
     thumbnailUrl,
@@ -28,7 +36,7 @@ const VideoPlayer = ({
             playerInitTime={0}
             autoPlay={autoPLay}
             thumbnailTime={0}
-            className='size-full object-contain'
+            className='size-full object-cover'
             accentColor="#121212"
             primaryColor="#b0b0b0"
             secondaryColor="#121212"

@@ -32,7 +32,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
       <SidebarHeader className={`${open && "px-4"} mt-2`}>
         <Link href="/studio" className={`flex items-center gap-2`}>
           <Image
-            src="./logo.svg"
+            src="/logo.svg"
             className=""
             alt="logo nolo"
             width={30}
@@ -46,13 +46,21 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
         </Link>
       </SidebarHeader>
       <SidebarContent className="mt-2">
-        <SidebarGroup>
+        <SidebarGroup >
           <StudioSidebarUser place="bottom" size={12} />
           {open && (
-            <SidebarGroupLabel>Quản lý nội dung của bạn</SidebarGroupLabel>
+            <SidebarGroupLabel className="mt-6">Quản lý nội dung của bạn</SidebarGroupLabel>
           )}
           <SidebarGroupContent>
             <SidebarMenu>
+              <SidebarMenuItem>
+                <SidebarMenuButton isActive={pathname === "/studio/thong-ke"} asChild>
+                  <Link href="/studio/thong-ke">
+                    <VideoIcon className="size-5" />
+                    Dashboard
+                  </Link>
+                </SidebarMenuButton>
+              </SidebarMenuItem>
               <SidebarMenuItem>
                 <SidebarMenuButton isActive={pathname === "/studio"} asChild>
                   <Link href="/studio">
@@ -61,6 +69,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
                   </Link>
                 </SidebarMenuButton>
               </SidebarMenuItem>
+
               <Separator />
               <SidebarMenuItem>
                 <SidebarMenuButton asChild>

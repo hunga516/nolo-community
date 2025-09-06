@@ -1,13 +1,13 @@
 import Image from "next/image";
 import Link from "next/link";
-import { VideoGetOneOutput } from "@/modules/video/types";
+import { VideoGetManyItem } from "@/modules/video/types";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { formatDistanceToNow } from "date-fns";
 import { vi } from "date-fns/locale";
 import { VideoThumbnail } from "@/modules/video/ui/components/video-thumbnail";
 
 interface VideoGridCardProps {
-    video: VideoGetOneOutput;
+    video: VideoGetManyItem;
 }
 
 export const VideoGridCard = ({ video }: VideoGridCardProps) => {
@@ -17,7 +17,7 @@ export const VideoGridCard = ({ video }: VideoGridCardProps) => {
     });
 
     return (
-        <Link href={`/videos/${video.id}`} className="block w-full space-y-2">
+        <Link href={`/community/videos/${video.id}`} className="block w-full space-y-2">
             <div className="relative aspect-video w-full rounded-md overflow-hidden bg-muted">
                 {video.muxPlaybackId ? (
                     <VideoThumbnail

@@ -2,7 +2,7 @@ import { createTRPCRouter, protectedProcedure } from "@/trpc/init";
 import { db } from "@/db";
 import { videosTable } from "@/db/schema";
 import { z } from "zod";
-import { and, or, eq, lt, desc } from "drizzle-orm";
+import { and, or, eq, lt, desc, sql } from "drizzle-orm";
 import { TRPCError } from "@trpc/server";
 
 export const studioRouter = createTRPCRouter({
@@ -12,7 +12,7 @@ export const studioRouter = createTRPCRouter({
       const { id: userId } = ctx.user;
       const { id } = input;
 
-      const [video] = await db  
+      const [video] = await db
         .select()
         .from(videosTable)
         .where(
@@ -20,13 +20,13 @@ export const studioRouter = createTRPCRouter({
             eq(videosTable.userId, userId),
             eq(videosTable.id, id),
           ))
-      
+
       if (!video) {
         throw new TRPCError({ code: "NOT_FOUND", message: "Video not found" });
       }
 
       return video;
-     }),
+    }),
   getMany: protectedProcedure
     .input(
       z.object({
@@ -51,12 +51,12 @@ export const studioRouter = createTRPCRouter({
             eq(videosTable.userId, userId),
             cursor
               ? or(
-                  lt(videosTable.updatedAt, cursor.updatedAt),
-                  and(
-                    eq(videosTable.updatedAt, cursor.updatedAt),
-                    lt(videosTable.id, cursor.id),
-                  ),
-                )
+                lt(videosTable.updatedAt, cursor.updatedAt),
+                and(
+                  eq(videosTable.updatedAt, cursor.updatedAt),
+                  lt(videosTable.id, cursor.id),
+                ),
+              )
               : undefined,
           ),
         )
@@ -70,14 +70,29 @@ export const studioRouter = createTRPCRouter({
       const lastIem = items[items.length - 1];
       const nextCursor = hasMore
         ? {
-            id: lastIem.id,
-            updatedAt: lastIem.updatedAt,
-          }
+          id: lastIem.id,
+          updatedAt: lastIem.updatedAt,
+        }
         : null;
 
       return {
         items,
         nextCursor,
+      };
+    }),
+  statistics: protectedProcedure
+    .input(z.object({ id: z.string() }))
+    .query(async ({ input }) => {
+      const userId = input.id;
+      // Đếm tổng số video của user này
+      const [{ count: totalVideos } = { count: 0 }] = await db
+        .select({ count: sql`count(*)::int` })
+        .from(videosTable)
+        .where(eq(videosTable.userId, userId));
+      return {
+        summary: {
+          totalVideos: Number(totalVideos)
+        }
       };
     }),
 });

@@ -12,6 +12,17 @@ interface HomeVideoSectionProps {
     categoryId: string;
 }
 
+// 🔹 định nghĩa type chuẩn cho page
+interface Video {
+    id: string;
+    // thêm các field khác nếu cần
+}
+
+interface VideoPage {
+    items: Video[];
+    nextCursor?: string;
+}
+
 export const HomeVideoSection = ({ categoryId }: HomeVideoSectionProps) => {
     return (
         <Suspense key={categoryId} fallback={<HomeVideoSectionSkeleton />}>
@@ -37,8 +48,8 @@ const HomeVideoSectionSuspense = ({ categoryId }: HomeVideoSectionProps) => {
         categoryId,
         limit: DEFAULT_LIMIT,
     }, {
-        getNextPageParam: (lastPage) => lastPage.nextCursor,
-    })
+        getNextPageParam: (lastPage: VideoPage) => lastPage.nextCursor,
+    });
 
     return (
         <>
@@ -47,7 +58,8 @@ const HomeVideoSectionSuspense = ({ categoryId }: HomeVideoSectionProps) => {
                     .flatMap((page) => page.items)
                     .map((video) => (
                         <VideoGridCard key={video.id} video={video} />
-                    ))}
+                    ))
+                }
             </div>
             <InfiniteScroll
                 hasNextPage={query.hasNextPage}

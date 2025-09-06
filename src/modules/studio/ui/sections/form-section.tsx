@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
 import { videoUpdateSchema } from "@/db/schema";
 import { trpc } from "@/trpc/client";
-import { CopyCheckIcon, CopyIcon, Globe2Icon, ImagePlusIcon, Lock, MoreVerticalIcon, RotateCcwIcon, SparkleIcon, TrashIcon } from "lucide-react";
+import { CopyCheckIcon, CopyIcon, Globe2Icon, ImagePlusIcon, Loader2Icon, Lock, MoreVerticalIcon, RotateCcwIcon, SparkleIcon, SparklesIcon, TrashIcon } from "lucide-react";
 import { Suspense, useState } from "react";
 import { ErrorBoundary } from "react-error-boundary";
 import { FormProvider, useForm } from "react-hook-form";
@@ -19,9 +19,8 @@ import VideoPlayer from "@/modules/video/ui/components/video-player";
 import Link from "next/link";
 import { translateStatus } from "@/lib/utils";
 import { useRouter } from "next/navigation";
-import Image from "next/image";
-import { THUMBNAIL_FALLBACK } from "@/modules/video/constants";
 import ThumbnailUploadModal from "../components/thumbnail-upload-modal";
+import { VideoThumbnail } from "@/modules/video/ui/components/video-thumbnail";
 
 
 interface FormSectionProps {
@@ -75,6 +74,44 @@ export const FormSectionSuspense = ({ videoId }: FormSectionProps) => {
         }
     })
 
+    const handleGenerateThumbnail = trpc.videos.generateThumbnail.useMutation({
+        onSuccess: () => {
+            toast.success("Đang tạo hình thu nhỏ", { description: "Vui lòng chờ trong giây lát" })
+        },
+        onError: () => {
+            toast.error("Không thể tạo hình thu nhỏ")
+        }
+    })
+
+    const handleGenerateTitle = trpc.videos.generateTitle.useMutation({
+        onSuccess: () => {
+            toast.success("Đang tạo tiêu đề tự động", { description: "Vui lòng chờ trong giây lát" })
+        },
+        onError: () => {
+            toast.error("Không thể tạo tiêu đề")
+        }
+    })
+
+    const handleGenerateDescription = trpc.videos.generateDescription.useMutation({
+        onSuccess: () => {
+            toast.success("Đang tạo mô tả tự động", { description: "Vui lòng chờ trong giây lát" })
+        },
+        onError: () => {
+            toast.error("Không thể tạo mô tả")
+        }
+    })
+
+    const handleRestoreThumbnail = trpc.videos.restoreThumbnail.useMutation({
+        onSuccess: () => {
+            utils.studio.getOne.invalidate({ id: videoId });
+            utils.studio.getMany.invalidate();
+            toast.success("Đã khôi phục hình thu nhỏ")
+        },
+        onError: () => {
+            toast.error("Không thể khôi phục hình thu nhỏ")
+        }
+    })
+
     const form = useForm<z.infer<typeof videoUpdateSchema>>({
         resolver: zodResolver(videoUpdateSchema),
         defaultValues: video,
@@ -84,7 +121,7 @@ export const FormSectionSuspense = ({ videoId }: FormSectionProps) => {
         update.mutate(data)
     }
 
-    const fullUrl = `${process.env.VPS_URL || "http://localhost:3000"}/videos/${video.id}`
+    const fullUrl = `${process.env.NEXT_PUBLIC_VPS_URL || "http://localhost:3000"}/videos/${video.id}`
     const [isCopied, setIsCopied] = useState(false);
 
     const onCopy = async () => {
@@ -105,7 +142,7 @@ export const FormSectionSuspense = ({ videoId }: FormSectionProps) => {
             />
             <FormProvider {...form}>
                 <form onSubmit={form.handleSubmit(onSubmit)}>
-                    <div className="flex items-center justify-between mb-6">
+                    <div className="sticky top-0 z-10 flex pt-2 py-4 items-center justify-between mb-4 bg-white">
                         <div>
                             <h1 className="text-2xl font-bold">Thông tin video</h1>
                             <p className="text-xs text-muted-foreground">Quản lý video của bạn</p>
@@ -137,8 +174,23 @@ export const FormSectionSuspense = ({ videoId }: FormSectionProps) => {
                                 render={({ field }) => (
                                     <FormItem>
                                         <FormLabel>
-                                            Tiêu đề
-                                            {/* add AI button */}
+                                            <div className="flex items-center gap-x-2">
+                                                Tiêu đề
+                                                <Button
+                                                    size="icon"
+                                                    variant="outline"
+                                                    className="rounded-full size-6 [&_svg]:size-3"
+                                                    type="button"
+                                                    onClick={() => handleGenerateTitle.mutate({ id: videoId })}
+                                                    disabled={handleGenerateTitle.isPending || !video.muxTrackId}
+                                                >
+                                                    {handleGenerateTitle.isPending ? (
+                                                        <Loader2Icon className="animate-spin" />
+                                                    ) : (
+                                                        <SparklesIcon />
+                                                    )}
+                                                </Button>
+                                            </div>
                                         </FormLabel>
                                         <FormControl>
                                             <Input
@@ -157,8 +209,23 @@ export const FormSectionSuspense = ({ videoId }: FormSectionProps) => {
                                 render={({ field }) => (
                                     <FormItem>
                                         <FormLabel>
-                                            Mô tả video
-                                            {/* add AI button */}
+                                            <div className="flex items-center gap-x-2">
+                                                Mô tả
+                                                <Button
+                                                    size="icon"
+                                                    variant="outline"
+                                                    className="rounded-full size-6 [&_svg]:size-3"
+                                                    type="button"
+                                                    onClick={() => handleGenerateDescription.mutate({ id: videoId })}
+                                                    disabled={handleGenerateDescription.isPending || !video.muxTrackId}
+                                                >
+                                                    {handleGenerateDescription.isPending ? (
+                                                        <Loader2Icon className="animate-spin" />
+                                                    ) : (
+                                                        <SparklesIcon />
+                                                    )}
+                                                </Button>
+                                            </div>
                                         </FormLabel>
                                         <FormControl>
                                             <Textarea
@@ -184,11 +251,17 @@ export const FormSectionSuspense = ({ videoId }: FormSectionProps) => {
                                             Thumbnail
                                         </FormLabel>
                                         <FormControl>
-                                            <div className="p-0.5 border border-dashed border-neutral-300 relative h-28 w-48 rounded-lg overflow-hidden group">
-                                                <Image
+                                            <div className="p-0.5 border border-dashed border-neutral-300 relative w-2xs rounded-lg overflow-hidden group">
+                                                {/* <Image
                                                     fill
                                                     alt="thumbnail"
                                                     src={video.thumbnailUrl || THUMBNAIL_FALLBACK}
+                                                /> */}
+                                                <VideoThumbnail
+                                                    imageUrl={video.thumbnailUrl}
+                                                    title={video.title}
+                                                    previewUrl={video.previewUrl}
+                                                    duration={video.duration}
                                                 />
                                                 <DropdownMenu>
                                                     <DropdownMenuTrigger asChild>
@@ -206,13 +279,15 @@ export const FormSectionSuspense = ({ videoId }: FormSectionProps) => {
                                                             <ImagePlusIcon className="size-4" />
                                                             Thay hình khác
                                                         </DropdownMenuItem>
-                                                        <DropdownMenuItem>
+                                                        <DropdownMenuItem
+                                                            onClick={() => handleGenerateThumbnail.mutate({ id: videoId })}
+                                                        >
                                                             <SparkleIcon className="size-4" />
-                                                            Tải hình lên
+                                                            Tạo hình ảnh
                                                         </DropdownMenuItem>
-                                                        <DropdownMenuItem>
+                                                        <DropdownMenuItem onClick={() => handleRestoreThumbnail.mutate({ id: videoId })}>
                                                             <RotateCcwIcon className="size-4" />
-                                                            Tải lại
+                                                            Tải lại hình gốc
                                                         </DropdownMenuItem>
                                                     </DropdownMenuContent>
                                                 </DropdownMenu>
@@ -269,7 +344,7 @@ export const FormSectionSuspense = ({ videoId }: FormSectionProps) => {
                                     <div className="flex justify-between items-center gap-x-2">
                                         <div className="flex flex-col gap-y-1">
                                             <p className="text-xs text-muted-foreground">
-                                                Video link
+                                                Đường dẫn video
                                             </p>
                                             <div className="flex items-center gap-x-2">
                                                 <Link href={`/videos/${video.id}`}>

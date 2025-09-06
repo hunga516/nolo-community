@@ -4,6 +4,7 @@ import { UploadDropzone } from "@/lib/uploadthings";
 // type ContentField = ReactNode
 
 import './uploadthing.css'
+import { trpc } from "@/trpc/client";
 
 interface ThumbnailUploadModalProps {
     videoId: string;
@@ -36,7 +37,15 @@ const ThumbnailUploadModal = ({
     open,
     onOpenChange,
 }: ThumbnailUploadModalProps) => {
-    console.log("videoId", videoId);
+
+    const utils = trpc.useUtils()
+
+    const onClientUploadComplete = () => {
+        utils.studio.getOne.invalidate({ id: videoId });
+        utils.studio.getMany.invalidate();
+        onOpenChange(false);
+    }
+
     return (
         <ResponsiveDialog
             open={open}
@@ -44,8 +53,10 @@ const ThumbnailUploadModal = ({
             title="Upload Thumbnail"
         >
             <UploadDropzone
+                input={{ videoId }}
                 className="bg-muted pt-12 pb-12"
-                endpoint="imageUploader"
+                endpoint="thumbnailUploader"
+                onClientUploadComplete={onClientUploadComplete}
                 content={{
                     button({ ready, isUploading }) {
                         if (isUploading) return <div>Đang tải lên...</div>;  // Thêm nội dung khi đang tải lên
