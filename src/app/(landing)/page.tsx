@@ -130,7 +130,7 @@ export default function Page() {
                                         ...transitionVariants,
                                     }}
                                     className="mt-12 flex flex-col items-center justify-center gap-2 md:flex-row">
-                                    <Link href="https://cfx.re/join/lgqbzv" target="_blank">
+                                    <Link href="https://cfx.re/join/8rgeq5" target="_blank">
                                         <button type="button" className={styles.button}>
                                             <div className={styles.points_wrapper}>
                                                 <i className={styles.point}></i>
@@ -285,7 +285,7 @@ export default function Page() {
                                                         Mở FiveM, tìm kiếm `Nolo Community` hoặc nhấn nút Kết nối nhanh bên dưới.
                                                     </p>
                                                     {/* Nút kết nối */}
-                                                    <Link href="https://cfx.re/join/lgqbzv" target="_blank" className='mt-4'>
+                                                    <Link href="https://cfx.re/join/8rgeq5" target="_blank" className='mt-4'>
                                                         <button type="button" className={styles.button}>
                                                             <div className={styles.points_wrapper}>
                                                                 <i className={styles.point}></i>
