@@ -7,6 +7,7 @@ import { ClerkProvider } from "@clerk/nextjs";
 import { viVN } from "@clerk/localizations";
 import { TRPCProvider } from "@/trpc/client";
 import { Toaster } from "sonner";
+// import { ChatbotProvider } from "@/components/chatbot";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -35,6 +36,7 @@ export default function RootLayout({
           <TRPCProvider>
             <Toaster />
             {children}
+            {/* <ChatbotProvider /> */}
           </TRPCProvider>
           <div id="modal-root"></div>
         </ClerkProvider>
